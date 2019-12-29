@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-29 18:19:37 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="TableClass.Room" table="ROOM">
+        <id name="Rno" type="java.lang.String">
+            <column name="RNO" />
+            <generator class="assigned" />
+        </id>
+        <property name="Rtype" type="java.lang.String">
+            <column name="RTYPE" />
+        </property>
+        <property name="Rprice" type="double">
+            <column name="RPRICE" />
+        </property>
+        <property name="Rcondition" type="int">
+            <column name="RCONDITION" />
+        </property>
+        <property name="Pno" type="java.lang.String">
+            <column name="PNO" />
+        </property>
+    </class>
+</hibernate-mapping>
