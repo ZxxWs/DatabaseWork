@@ -31,8 +31,6 @@ public class HibernateUtil {
 		    StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
 	        sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 
-//	        sessionFactory=cfg.buildSessionFactory();
-	        
 		} catch (Exception e) {
 			System.out.println("Session工厂创建失败");
 			e.printStackTrace();

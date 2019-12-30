@@ -16,6 +16,9 @@
         
         <!--引入映射文件 -->
         <mapping resource="TableClass/Room.hbm.xml"/>
+        <mapping resource="TableClass/Guest.hbm.xml"/>
+        <mapping resource="TableClass/CheckIn.hbm.xml"/>
+        <mapping resource="TableClass/Principal.hbm.xml"/>
          
     </session-factory>
 </hibernate-configuration>
