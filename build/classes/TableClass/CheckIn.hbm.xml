@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2019-12-29 18:19:37 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2020-1-2 1:44:16 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="TableClass.CheckIn" table="CHECKIN">
-        <id name="CID" type="java.lang.String">
+        <id name="CID" type="java.math.BigInteger">
             <column name="CID" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="Gno" type="java.lang.String">
             <column name="GNO" />
@@ -29,5 +29,6 @@
         <property name="BackNo" type="java.lang.String">
             <column name="BACKNO" />
         </property>
+    
     </class>
 </hibernate-mapping>

@@ -1,5 +1,6 @@
 package TableClass;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 //SQL时间格式：2019-12-29 20:10:39
@@ -16,8 +17,7 @@ public class CheckIn {
 	 * time：2019.12.28
 	 * by:Zxx
 	 * */
-		
-	private String CID;
+	private BigInteger CID;
 	private String Gno;
 	private String Rno;
 	private Date InTime;
@@ -25,27 +25,13 @@ public class CheckIn {
 	private double AllTime;
 	private String FrontNo;
 	private String BackNo;
-	private String N;//用于Hibernate
+	private BigInteger N;//用于Hibernate的主键查询
 	
 	public CheckIn() {
 
 	}
 	
-//	public CheckIn(	String CID,String Gno,String Rno,Date InTime,Date OutTime,double AllTime,String FrontNo,String BackNo) {
-//		this.CID=CID;
-//		this.Gno=Gno;
-//		this.Rno=Rno;
-//		this.InTime=InTime;
-//		this.OutTime=OutTime;
-//		this.AllTime=AllTime;
-//		this.FrontNo=FrontNo;
-//		this.BackNo=BackNo;
-//		
-//		this.N=CID;
-//	}
-	
-	
-	public CheckIn(	String CID,String Gno,String Rno,Date InTime,double AllTime) {
+	public CheckIn(BigInteger CID,String Gno,String Rno,Date InTime,double AllTime) {
 		this.CID=CID;
 		this.Gno=Gno;
 		this.Rno=Rno;
@@ -54,7 +40,7 @@ public class CheckIn {
 		this.N=CID;
 	}
 	
-	public void setCID(String CID) {
+	public void setCID(BigInteger CID) {
 		this.CID=CID;
 		this.N=CID;
 	}
@@ -87,7 +73,7 @@ public class CheckIn {
 		this.BackNo=BackNo;
 	}
 	
-	public String getCID() {
+	public BigInteger getCID() {
 		return this.CID;
 	}
 	
@@ -121,7 +107,7 @@ public class CheckIn {
 	
 	@Override
 	public String toString() {
-		return N;
+		return String.valueOf(this.N);
 	}
 	
 }

@@ -16,19 +16,9 @@ public class SJKMain {
 	public static void main(String[] args) throws Exception {
 		
 
-
-		FindInformation findInformation=new FindInformation();
-		findInformation.setByGno("001");
-		ArrayList<Guest> arrayList=findInformation.getGuestList();
-		ArrayList<CheckIn> arrayList2=findInformation.getCheakInList();
-		
-//		for (Guest g:arrayList) {
-//			System.out.print(g.getGno());
-//		}
-		for(CheckIn c:arrayList2) {
-			System.out.println(c.getCID());
-		}
-//		
+		String a="123456789012345678";
+		System.out.println(a.charAt(16));
+		;
 	}
 
 	

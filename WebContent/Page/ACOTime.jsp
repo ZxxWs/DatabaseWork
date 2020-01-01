@@ -39,7 +39,7 @@
 	                <td><s:property value="AllTime"/></td>
 	                <td><s:property value="OutTime.getMonth()+1"/>月<s:property value="OutTime.getDate()"/>日 <s:property value="OutTime.getHours()"/>:<s:property value="OutTime.getMinutes()"/></td>
 	              
-	                <td><input class="btn" name="edit" type="button" value="入住" onclick=""></td>
+	                <td><input class="btn" name="edit" type="button" value="" onclick=""></td>
 		        </tr>
 	        
 	        </s:iterator>	

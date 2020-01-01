@@ -35,15 +35,21 @@
 	                <td><s:property value="Rprice"/></td>
 	                <td><s:property value="Pno"/></td>
 	                
-	                <td><input class="btn" name="edit" type="button" value="入住" onclick=""></td>
+	                <td><input class="btn" name="edit" type="button" value="入住" onclick="InPutCheckIn(<s:property value="Rno"/>)"></td>
 		        </tr>
 	        
 	        </s:iterator>	
 	        
-        		
-        	
     	</table>
     
+      <script>
+        // alert("我叫：");  
+        function InPutCheckIn(Rno){
+
+        	open ('/SJK/Page/CheckInInPut.jsp?Rno='+Rno, '客户信息登记' , 'height=400, width=700, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+
+     	   }
+    </script>
     
 
 </body>

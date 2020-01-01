@@ -18,14 +18,23 @@
 
 		<s:form action="FindAction"><!-- submit标签必须放在form标签下才会显示并起作用 -->
 			
-			<s:select list="#{0:'选择查询方式',1:'通过身份证号查询',2:'查询房间使用记录'}" name="SeletMothod"></s:select>
+			<s:select list="#{0:'选择查询方式',1:'通过身份证号查询',2:'查询房间使用记录'}" name="FindMethod"></s:select>
 
-			<s:textfield value="输入"></s:textfield>
+
+			<s:textfield value="输入" name="FindNum"></s:textfield>
 		
 		    <s:submit value="查询"/><!-- 默认type="input" -->
 		    
 		</s:form>
 
+			<s:if test="FindMethod==1">
+				顾客信息：
+				
+				开房记录：
+			</s:if>
+			
+			<s:elseif test="FindMethod==1">
+			</s:elseif>
 	
 
 </body>
