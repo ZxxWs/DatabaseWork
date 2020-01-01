@@ -5,7 +5,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sun.accessibility.internal.resources.accessibility;
 
 import Dispose.Crud;
+import Dispose.ShowCheckIn;
+import Dispose.ShowRoom;
+import TableClass.CheckIn;
 import TableClass.Room;
+import Tools.getOutTime;
 public class SelectPage  extends ActionSupport{
 
 	
@@ -17,21 +21,30 @@ public class SelectPage  extends ActionSupport{
  * */
 	private static final long serialVersionUID = 1L;
 	private String Page;
-	private ArrayList<Room> RoomList;
+	private ArrayList<Room> RoomList;//开房页面的初始化
+	private ArrayList<CheckIn> ACOTimeList;//换房、退房、续房界面初始化
 	
 	
 	@Override
 	public String execute() throws Exception {
 
-		if(this.Page.equals("0")) {
+		switch (this.Page) {
+		case "0":
 			setRoomList();
+			break;
+		case "1":
+			setACOTimeList();
+			break;
+
+		default:
+			break;
 		}
+		
 		return this.Page;
 	}
 	
 	public void setPage(String Page) {
 		this.Page=Page;
-		System.out.println(Page);
 	}
 	
 	public String getPage() {
@@ -40,25 +53,34 @@ public class SelectPage  extends ActionSupport{
 	
 	
 	
-	
 	public void setRoomList() {
-		Crud<Room> crud=new Crud<>();
-		this.RoomList=crud.Read(new Room(),"from Room where Rcondition=0");
-	//	System.out.println(this.RoomList.toString());
-		
-		
-		for(Room r:this.RoomList) {
-			System.out.println(r.getRno());
-
-			System.out.println(r.getRprice());
-		}
-		System.out.println("\n\nset\n\n");
-		
+		ShowRoom showRoom=new ShowRoom();
+		this.RoomList=showRoom.getRoomList();
 	}
 	
 	public ArrayList<Room> getRoomList() {
-		System.out.println("\n得到RoomList\n");
 		return this.RoomList;
 	}
+	
+	public void setACOTimeList() {
+		
+		ShowCheckIn showCheckIn=new ShowCheckIn();
+		this.ACOTimeList=showCheckIn.getCheckInList();
+		
+//		for(CheckIn c:this.ACOTimeList) {
+//			System.out.println("In:\t"+c.getInTime());
+//			System.out.println("Out:\t"+c.getOutTime());
+//		}
+		
+	}
+	
+	public ArrayList<CheckIn> getACOTimeList() {
+
+		return this.ACOTimeList;
+	}
+	
+	
+	
+	
 	
 }

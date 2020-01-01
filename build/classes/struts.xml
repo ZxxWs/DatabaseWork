@@ -13,15 +13,19 @@
 	
 	<!-- 定义action -->
 		<action name="login" class="com.sjk.action.Login" method="execute">
-			<result name="Success" type="redirect">/Page/CheckIn.jsp</result>
+			<result name="Success" type="redirect">SelectPage.action?Page=0</result>
 		</action>	
 	
 		<action name="SelectPage" class="com.sjk.action.SelectPage" method="execute">
 			<result name="0" >/Page/CheckIn.jsp</result>
-			<result name="1" type="redirect">/Page/ACOTime.jsp</result>
-			<result name="2" type="redirect">/Page/FindInformation.jsp</result>
-			<result name="3" type="redirect">/Page/Change.jsp</result>
+			<result name="1" >/Page/ACOTime.jsp</result>
+			<result name="2" >/Page/FindInformation.jsp</result>
+			<result name="3" >/Page/Change.jsp</result>
 			<result name="4" type="redirect">index.html</result>
+		</action>
+	
+		<action name="FindAction" class="com.sjk.action.FindAction" method="execute">
+			<result name="S">/Page/FindInformation.jsp</result>
 		</action>
 	
 	</package>

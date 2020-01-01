@@ -6,8 +6,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
 public class Crud<Obj> {
+	
 /**
  * 采用泛型技术 将数据库表的操作都写到一个类中
  * 包含四个方法
@@ -15,7 +15,6 @@ public class Crud<Obj> {
  * R：read
  * U：update--未写
  * D：delete--未写
- * 
  * 
  * */
 	
@@ -32,14 +31,11 @@ public class Crud<Obj> {
 		HibernateUtil.closeSession();
 	}
 	
-	
-	
 	/**
 	 * 查询方法。两个参数：一个表的对象，一个String语句
 	 * 当String不空时，通过HQL语句查询
 	 * 当String为空时，通过Obj对象查询整个表
 	 * 								  或者通过对象主键查询某个对象
-	 * 
 	 * */
 	@SuppressWarnings("unchecked")
 	public ArrayList<Obj> Read(Obj obj,String HQL) {

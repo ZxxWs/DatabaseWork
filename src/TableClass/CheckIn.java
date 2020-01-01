@@ -31,16 +31,26 @@ public class CheckIn {
 
 	}
 	
-	public CheckIn(	String CID,String Gno,String Rno,Date InTime,Date OutTime,double AllTime,String FrontNo,String BackNo) {
+//	public CheckIn(	String CID,String Gno,String Rno,Date InTime,Date OutTime,double AllTime,String FrontNo,String BackNo) {
+//		this.CID=CID;
+//		this.Gno=Gno;
+//		this.Rno=Rno;
+//		this.InTime=InTime;
+//		this.OutTime=OutTime;
+//		this.AllTime=AllTime;
+//		this.FrontNo=FrontNo;
+//		this.BackNo=BackNo;
+//		
+//		this.N=CID;
+//	}
+	
+	
+	public CheckIn(	String CID,String Gno,String Rno,Date InTime,double AllTime) {
 		this.CID=CID;
 		this.Gno=Gno;
 		this.Rno=Rno;
 		this.InTime=InTime;
-		this.OutTime=OutTime;
 		this.AllTime=AllTime;
-		this.FrontNo=FrontNo;
-		this.BackNo=BackNo;
-		
 		this.N=CID;
 	}
 	

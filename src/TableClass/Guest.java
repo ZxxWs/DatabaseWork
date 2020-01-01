@@ -35,7 +35,6 @@ public class Guest {
 	
 	public void setGno(String Gno) {
 		this.Gno=Gno;
-		
 		this.N=Gno;
 	}
 
