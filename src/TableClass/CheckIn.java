@@ -31,13 +31,11 @@ public class CheckIn {
 
 	}
 	
-	public CheckIn(BigInteger CID,String Gno,String Rno,Date InTime,double AllTime) {
-		this.CID=CID;
+	public CheckIn(String Gno,String Rno,Date InTime,double AllTime) {
 		this.Gno=Gno;
 		this.Rno=Rno;
 		this.InTime=InTime;
 		this.AllTime=AllTime;
-		this.N=CID;
 	}
 	
 	public void setCID(BigInteger CID) {
