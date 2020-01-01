@@ -25,6 +25,7 @@ public class CheckIn {
 	private double AllTime;
 	private String FrontNo;
 	private String BackNo;
+	private String N;//”√”⁄Hibernate
 	
 	public CheckIn() {
 
@@ -39,10 +40,13 @@ public class CheckIn {
 		this.AllTime=AllTime;
 		this.FrontNo=FrontNo;
 		this.BackNo=BackNo;
+		
+		this.N=CID;
 	}
 	
 	public void setCID(String CID) {
 		this.CID=CID;
+		this.N=CID;
 	}
 	
 	public void setGno(String Gno) {
@@ -103,6 +107,11 @@ public class CheckIn {
 	
 	public String getBackNo() {
 		return this.BackNo;
+	}
+	
+	@Override
+	public String toString() {
+		return N;
 	}
 	
 }

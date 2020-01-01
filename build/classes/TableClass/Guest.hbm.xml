@@ -11,6 +11,11 @@
         <property name="Gname" type="java.lang.String">
             <column name="GNAME" />
         </property>
+        
+        <property name="Gsex" type="java.lang.String">
+            <column name="Gsex" />
+        </property>
+        
         <property name="Gtel" type="java.lang.String">
             <column name="GTEL" />
         </property>

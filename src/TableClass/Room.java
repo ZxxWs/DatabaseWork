@@ -20,6 +20,7 @@ public class Room {
 	private double Rprice;
 	private int Rcondition;
 	private String Pno;
+	private String N;//”√”⁄Hibernate
 	
 	public Room() {
 	}
@@ -30,10 +31,14 @@ public class Room {
 		this.Rprice=Rprice;
 		this.Rcondition=Rcondition;
 		this.Pno=Pno;
+
+		this.N=Rno;
 	}
 	
 	public void setRno(String Rno){
 		this.Rno=Rno;
+
+		this.N=Rno;
 	}
 	
 	public void setRtype(String Rtype){
@@ -72,5 +77,9 @@ public class Room {
 		return this.Pno;
 	}
 	
+	@Override
+	public String toString() {
+		return N;
+	}
 	
 }

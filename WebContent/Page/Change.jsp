@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>客房管理系统</title>
+   <link href="/SJK/Page/Css/Css2.css" type="text/css" rel="stylesheet" />
+<title>信息修改</title>
 </head>
 <body>
-Hello
+<iframe id="ShowPag" name="ShowPag" src="/SJK/Page/Menu.jsp" noresize="noresize"></iframe>
+  
+信息修改
+
 
 </body>
 </html>

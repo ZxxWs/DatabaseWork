@@ -1,8 +1,11 @@
 package com.sjk.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.ArrayList;
 
-public class Login extends ActionSupport{
+import Dispose.Crud;
+import TableClass.Room;
+
+public class Login {
 
 	/**
 	 * 访问action的时候，默认执行execute方法
@@ -10,9 +13,23 @@ public class Login extends ActionSupport{
 	 * 
 	 * 
 	 * */
+//	private ArrayList<Room> RoomList;
+
+	
 	
 	
 	public String execute() {
+		//setRoomList();
 		return "Success";
 	}
+	
+//	public void setRoomList() {
+//		Crud<Room> crud=new Crud<>();
+//		this.RoomList=crud.Read(new Room(),"from Room where Rcondition=0");
+//		System.out.println(this.RoomList.toString());
+//	}
+//	
+//	public ArrayList<Room> getRoomList() {
+//		return this.RoomList;
+//	}
 }
