@@ -19,10 +19,12 @@ public class CheckIn {
 	 * */
 	private BigInteger CID;
 	private String Gno;
+	private String Gno1;
 	private String Rno;
 	private Date InTime;
 	private Date OutTime;
-	private double AllTime;
+	private int AllTime;
+	private double AllMoney;
 	private String FrontNo;
 	private String BackNo;
 	private BigInteger N;//用于Hibernate的主键查询
@@ -31,11 +33,21 @@ public class CheckIn {
 
 	}
 	
-	public CheckIn(String Gno,String Rno,Date InTime,double AllTime) {
+	public CheckIn(String Gno,String Rno,Date InTime,int AllTime,double AllMoney) {//单人间入住
 		this.Gno=Gno;
 		this.Rno=Rno;
 		this.InTime=InTime;
 		this.AllTime=AllTime;
+		this.AllMoney=AllMoney;
+	}
+	
+	public CheckIn(String Gno,String Gno1,String Rno,Date InTime,int AllTime,double AllMoney) {//双人间入住
+		this.Gno=Gno;
+		this.Gno1=Gno1;
+		this.Rno=Rno;
+		this.InTime=InTime;
+		this.AllTime=AllTime;
+		this.AllMoney=AllMoney;
 	}
 	
 	public void setCID(BigInteger CID) {
@@ -45,6 +57,10 @@ public class CheckIn {
 	
 	public void setGno(String Gno) {
 		this.Gno=Gno;
+	}
+	
+	public void setGno1(String Gno1) {
+		this.Gno1=Gno1;
 	}
 	
 	public void setRno(String Rno) {
@@ -59,8 +75,12 @@ public class CheckIn {
 		this.OutTime=OutTime;
 	}
 
-	public void setAllTime(double AllTime) {
+	public void setAllTime(int AllTime) {
 		this.AllTime=AllTime;
+	}
+	
+	public void setAllMoney(double AllMoney) {
+		this.AllMoney=AllMoney;
 	}
 	
 	public void setFrontNo(String FrontNo) {
@@ -79,6 +99,10 @@ public class CheckIn {
 		return this.Gno;
 	}
 		
+	public String getGno1() {
+		return this.Gno1;
+	}
+	
 	public String getRno() {
 		return this.Rno;
 	}
@@ -91,8 +115,12 @@ public class CheckIn {
 		return this.OutTime;
 	}
 	
-	public double getAllTime() {
+	public int getAllTime() {
 		return this.AllTime;
+	}
+	
+	public double getAllMoney() {
+		return this.AllMoney;
 	}
 	
 	public String getFrontNo() {

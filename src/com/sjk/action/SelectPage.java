@@ -62,16 +62,12 @@ public class SelectPage  extends ActionSupport{
 		return this.RoomList;
 	}
 	
+	
 	public void setACOTimeList() {
 		
 		ShowCheckIn showCheckIn=new ShowCheckIn();
 		this.ACOTimeList=showCheckIn.getCheckInList();
-		
-//		for(CheckIn c:this.ACOTimeList) {
-//			System.out.println("In:\t"+c.getInTime());
-//			System.out.println("Out:\t"+c.getOutTime());
-//		}
-		
+	
 	}
 	
 	public ArrayList<CheckIn> getACOTimeList() {

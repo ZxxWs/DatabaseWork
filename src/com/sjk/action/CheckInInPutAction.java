@@ -13,7 +13,7 @@ import javafx.util.converter.ShortStringConverter;
 
 public class CheckInInPutAction extends ActionSupport{
 
-	
+	//代码有BUG，即使入住不成功也会返回成功标签
 	/**
 	 * 入住登记Action
 	 * get方法没写
@@ -23,7 +23,6 @@ public class CheckInInPutAction extends ActionSupport{
 	 * 						时长
 	 * 
 	 * ！！！！双人间：一个/两个信息
-	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	//有双人间的可能性
@@ -35,15 +34,23 @@ public class CheckInInPutAction extends ActionSupport{
 	private String Gtel1;
 	
 	private String Rno;//单双人间一样的值
-	private double AllTime;
+	private int AllTime;
+	private double Rprice;
+	private int Rtype;//开房的种类，用于计算价格和代码逻辑分类
 	
+	private double AllMoney;
 	
 	
 	@Override
 	public String execute() throws Exception {
+		
+		
+		//if(Input()) {
+			return "S";
+		//}else {
+		//	return "F";
+		///}	
 
-		Input();
-		return "S";
 	}
 	
 	/**
@@ -51,13 +58,13 @@ public class CheckInInPutAction extends ActionSupport{
 	 * 
 	 * */
 	
-	private void Input() {
+	private Boolean Input() {
 
 		Crud<Guest> Gcrud=new Crud<>();
 		Crud<CheckIn> Ccrud=new Crud<>();
 		
 		//单人间
-		if(this.Gno1==null) {
+
 			int IntSex=this.Gno.charAt(16);
 			String Sex="";
 			if(IntSex%2!=0) {
@@ -67,14 +74,15 @@ public class CheckInInPutAction extends ActionSupport{
 			}
 			
 			Guest guest=new Guest(this.Gno,this.Gname,Sex,this.Gtel);
-			CheckIn checkIn=new CheckIn(this.Gno,this.Rno, new Date(),this.AllTime);
+			CheckIn checkIn=new CheckIn(this.Gno,this.Rno, new Date(),this.AllTime,23);
 
-			Gcrud.Create(guest);
-			Ccrud.Create(checkIn);
-
-		}else {//双人间的入住
+			Boolean tag1=Gcrud.Create(guest);
+			Boolean tag2=Ccrud.Create(checkIn);
 			
-		}
+			
+			return tag1&&tag2;//向数据库中添加数据。并返回是否成功
+		
+
 		
 	}
 	
@@ -109,8 +117,17 @@ public class CheckInInPutAction extends ActionSupport{
 		this.Rno=Rno;
 	}
 	
-	public void setAllTime(double AllTime) {
+	public void setAllTime(int AllTime) {
 		this.AllTime=AllTime;
+	}
+	
+	public void setRprice(double Rprice) {
+		this.Rprice=Rprice;
+	}
+	
+	public void setRtype(int Rtype) {
+		this.Rtype=Rtype;
+		System.out.println(Rtype);
 	}
 	
 	//
@@ -118,6 +135,9 @@ public class CheckInInPutAction extends ActionSupport{
 	//应该用不到，所以没写
 	//
 	//
+	public double getAllMoney() {
+		return this.AllMoney;
+	}
 	
 	
 }

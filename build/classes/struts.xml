@@ -4,10 +4,8 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
-        
 <struts>
   	<constant name="struts.devMode" value="true" />
-
    
 	<package name="packageName" extends="struts-default" namespace="/">
 	
@@ -26,6 +24,12 @@
 	
 		<action name="FindAction" class="com.sjk.action.FindAction" method="execute">
 			<result name="S">/Page/FindInformation.jsp</result>
+		</action>
+	
+		<!-- 入住信息登记界面成功与否 -->
+		<action name="CheckInAction" class="com.sjk.action.CheckInInPutAction" method="execute">
+			<result name="F" type="redirect">/Page/CheckInPut/CheckInF.jsp</result>
+			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
 		</action>
 	
 	</package>

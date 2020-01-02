@@ -18,7 +18,8 @@ public class Crud<Obj> {
  * 
  * */
 	
-	public void Create(Obj obj) {
+	public Boolean Create(Obj obj) {
+		Boolean Tag=true;//添加成功与否,0为成功
 		Session session = null;
 		try {
 			session=HibernateUtil.getSession();
@@ -27,8 +28,10 @@ public class Crud<Obj> {
 			transaction.commit();
 		} catch (Exception e) {
 			System.out.print("添加失败");
+			Tag=false;
 		}
 		HibernateUtil.closeSession();
+		return Tag;
 	}
 	
 	/**
