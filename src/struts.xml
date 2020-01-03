@@ -9,31 +9,34 @@
    
 	<package name="packageName" extends="struts-default" namespace="/">
 	
-	<!-- 定义action -->
+		<!-- 定义action -->
 		<action name="login" class="com.sjk.action.Login" method="execute">
 			<result name="Success" type="redirect">SelectPage.action?Page=0</result>
 		</action>	
 	
-			<!-- 退房功能 -->
+		<!-- 入住信息登记界面成功与否 -->
+		<action name="CheckInAction" class="com.sjk.action.CheckInInPutAction" method="execute">
+			<result name="F" >/Page/CheckInPut/CheckInF.jsp</result>
+			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
+		</action>
+		
+		<!-- 退房功能 -->
 		<action name="AOTimeActionO" class="com.sjk.action.ACOTimeAction_O">
-			<result name="S" type="redirect">SelectPage.action?Page=1</result>
+			<result name="S" type="chain">SelectPage</result> 
 		</action>
 	
 		<!-- 续房功能 -->
 		<action name="AOTimeActionA" class="com.sjk.action.ACOTimeAction_A">
-			<result name="S" type="redirect">SelectPage.action?Page=1</result>
+			<result name="S" type="chain">SelectPage</result> 
+		</action>
+	
+		<!-- 查询表单 -->
+		<action name="FindInformationAction" class="com.sjk.action.FindInformationAction" method="execute">
+			<result name="S" type="chain">SelectPage</result> 
+			
 		</action>
 	
 	
-		<action name="FindAction" class="com.sjk.action.FindAction" method="execute">
-			<result name="S">/Page/FindInformation.jsp</result>
-		</action>
-	
-		<!-- 入住信息登记界面成功与否 -->
-		<action name="CheckInAction" class="com.sjk.action.CheckInInPutAction" method="execute">
-			<result name="F" type="redirect">/Page/CheckInPut/CheckInF.jsp</result>
-			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
-		</action>
 	
 		<!-- 页面选择按钮 -->
 		<action name="SelectPage" class="com.sjk.action.SelectPage" method="execute">

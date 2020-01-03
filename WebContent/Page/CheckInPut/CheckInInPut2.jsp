@@ -37,7 +37,7 @@
 		<s:hidden name="Rno" value="%{#request.Rno}"></s:hidden>
 		<s:hidden name="Rprice" value="%{#request.Rprice}"></s:hidden>
 		<s:hidden name="Rtype" value="2"></s:hidden>
-
+		<s:hidden value="0" name="Page"></s:hidden><!-- 用于页面重定向的 -->
 	
 	    <s:submit value="入住"/><!-- 默认type="input" -->
 	    
@@ -48,9 +48,5 @@
 
 
 </body>
-
-<script>
-	var Rno=<%=request.getParameter("Rno")%>
-</script>
 
 </html>

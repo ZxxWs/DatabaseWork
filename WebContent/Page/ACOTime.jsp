@@ -62,12 +62,14 @@
     	<form id="AOTimeActionO" action="AOTimeActionO" method="post" target="_parent">
 	        <!-- 退房的传参-->
 	        <input type="hidden" name="CID" id="CID" value="null">
+	        <input type="hidden" name="Page"  value="1"><!-- 用于页面重定向的 -->
     	</form>
 
 
 		<form id="AOTimeActionA" action="AOTimeActionA" method="post" target="_parent">
 	        <!-- 续房的传参-->
 	        
+	        <input type="hidden" name="Page"  value="1">
 	        <input type="hidden" name="CID" id="CIDA" value="null">
 	        <input type="hidden" name="AddTime" id="AddTime" value="null">
     	</form>

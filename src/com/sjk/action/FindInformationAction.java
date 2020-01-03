@@ -10,50 +10,57 @@ import TableClass.Guest;
 import TableClass.Principal;
 import TableClass.Room;
 
-public class FindAction extends ActionSupport{
-
+public class FindInformationAction extends ActionSupport{
 	
 	/**
 	 * 查询界面的Action
-	 * 代码较乱，后期需要整理结构
 	 * 此页代码包括前端接收和后端查询处理
 	 * 
+	 * 参数包括：查询号码	
+	 * 			 查询方法
+	 * 			 成功与否标志
 	 * 
+	 * 			 四个表的对象List
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String FindNum;
 	private int FindMethod;
-
+	private Boolean Tag=true;
+	
 	private ArrayList<Room> RoomList;
 	private ArrayList<CheckIn> CheckInList;
 	private ArrayList<Guest> GuestList;
 	private ArrayList<Principal> PrincipalList;
 	
-	
+	private int test;
 	
 	@Override
 	public String execute() throws Exception {
 
+		this.test=0;
+		
+		System.out.println(this.FindMethod);
+		System.out.println(this.FindNum);
 		switch (this.FindMethod) {
 		case 1:
 			setByGno(this.FindNum);
 			break;
-
 		case 2:
 			setByRno(this.FindNum);
 			break;
-
 		default:
+			
 			break;
 		}
 		
 		return "S";
 	}
 	
-	
-	
-	
+	/**
+	 * 通过顾客身份证号查询
+	 * 查询数据库的Guest表和CheckIn表
+	 * */
 	private void setByGno(String Gno) {
 		
 		String HQL="from CheckIn where Gno="+Gno;
@@ -67,6 +74,9 @@ public class FindAction extends ActionSupport{
 		Crud<CheckIn> crud2=new Crud<>();
 		this.CheckInList=crud2.Read(checkIn,HQL);//查询入住关系表
 		
+		if(this.GuestList.isEmpty()||this.CheckInList.isEmpty()) {//查询失败标志
+			this.Tag=false;
+		}
 	}
 	
 	/**
@@ -87,20 +97,10 @@ public class FindAction extends ActionSupport{
 		Crud<CheckIn> crud2=new Crud<>();
 		this.CheckInList=crud2.Read(checkIn,HQL);//用房间号查询入住关系表
 		
+		if(this.RoomList.isEmpty()||this.CheckInList.isEmpty()) {//查询失败标志
+			this.Tag=false;
+		}
 	}
-	
-
-	
-	
-	
-	
-	
-	/**
-	 * 
-	 * 
-	 * */
-	
-	
 	
 	public void setFindMethod(int FindMethod) {
 		this.FindMethod=FindMethod;
@@ -108,6 +108,10 @@ public class FindAction extends ActionSupport{
 	
 	public void setFindNum(String FindNum) {
 		this.FindNum=FindNum;
+	}
+	
+	public void setTag(Boolean Tag) {
+		this.Tag=Tag;
 	}
 	
 	public int getFindMethod() {
@@ -118,6 +122,10 @@ public class FindAction extends ActionSupport{
 		return this.FindNum;
 	}
 	
+	public Boolean getTag() {
+		System.out.println("GetTag执行");
+		return this.Tag;
+	}
 	
 	public ArrayList<Room> getRoomList(){
 		return this.RoomList;
@@ -134,5 +142,19 @@ public class FindAction extends ActionSupport{
 	public ArrayList<Principal> getPrincipalList(){
 		return this.PrincipalList;
 	}
+	
+	
+	public void setest(int test) {
+		this.test=test;
+	}
+	
+	public int gettest() {
+		return this.test;
+	}
+	
+	
+	
+	
+	
 	
 }
