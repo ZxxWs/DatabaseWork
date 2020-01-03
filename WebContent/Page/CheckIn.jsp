@@ -13,8 +13,6 @@
    <iframe id="ShowPag" name="ShowPag" src="/SJK/Page/Menu.jsp" noresize="noresize"></iframe>
     <!-- frameBorder=0 -->
     
-    
-    
         <table id="ShowTable" border="1" cellspacing="0" cellpadding="0">
 	       <thead>
 		        <tr>

@@ -1,19 +1,17 @@
 package com.sjk.action;
 
 import java.util.Date;
-
-import javax.persistence.criteria.CriteriaBuilder.In;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import Dispose.Crud;
+import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Guest;
-import javafx.util.converter.ShortStringConverter;
+import TableClass.Room;
 
 public class CheckInInPutAction extends ActionSupport{
 
-	//代码有BUG，即使入住不成功也会返回成功标签
+	//代码有BUG，前端无法接受总金额
 	/**
 	 * 入住登记Action
 	 * get方法没写
@@ -37,19 +35,19 @@ public class CheckInInPutAction extends ActionSupport{
 	private int AllTime;
 	private double Rprice;
 	private int Rtype;//开房的种类，用于计算价格和代码逻辑分类
-	
+
+	//返回值
 	private double AllMoney;
-	
+	private String CID;
 	
 	@Override
 	public String execute() throws Exception {
 		
-		
-		//if(Input()) {
+		if(Input()) {
 			return "S";
-		//}else {
-		//	return "F";
-		///}	
+		}else {
+			return "F";
+		}	
 
 	}
 	
@@ -63,29 +61,60 @@ public class CheckInInPutAction extends ActionSupport{
 		Crud<Guest> Gcrud=new Crud<>();
 		Crud<CheckIn> Ccrud=new Crud<>();
 		
-		//单人间
+		//用于记录添加更改是否成功
+		Boolean Tag=new Boolean(true);
+		
+		int IntSex=this.Gno.charAt(16);
 
-			int IntSex=this.Gno.charAt(16);
-			String Sex="";
+		String Sex="";
+		{//性别判断
 			if(IntSex%2!=0) {
 				Sex="男";
 			}else {
 				Sex="女";
 			}
-			
-			Guest guest=new Guest(this.Gno,this.Gname,Sex,this.Gtel);
-			CheckIn checkIn=new CheckIn(this.Gno,this.Rno, new Date(),this.AllTime,23);
+		}
 
-			Boolean tag1=Gcrud.Create(guest);
-			Boolean tag2=Ccrud.Create(checkIn);
-			
-			
-			return tag1&&tag2;//向数据库中添加数据。并返回是否成功
+		this.AllMoney=this.AllTime*this.Rprice;//钱数计算
 		
+		if(this.Rtype==1||this.Rtype==2) {//整天的时间计算
+			this.AllTime*=24;
+		}
 
+
+		Guest guest=new Guest(this.Gno,this.Gname,Sex,this.Gtel);//不管单双人房，先登记一个
+		Gcrud.Create(guest);
 		
-	}
+		if(this.Rtype==1||this.Rtype==3) {//单人类型房间的数据库插入
+			
+			CheckIn checkIn=new CheckIn(this.Gno,this.Rno, new Date(),this.AllTime,this.AllMoney);
+			Tag=Ccrud.Create(checkIn);
+			
+		}else {//双人类型房间的数据库插入
+			
+			int IntSex1=this.Gno1.charAt(16);
+			String Sex1="";
+			if(IntSex1%2!=0) {
+				Sex1="男";
+			}else {
+				Sex1="女";
+			}
+			
+			Guest guest1=new Guest(this.Gno1,this.Gname1,Sex1,this.Gtel1);
+			CheckIn checkIn=new CheckIn(this.Gno,this.Gno1,this.Rno, new Date(),this.AllTime,this.AllMoney);
+
+			Gcrud.Create(guest1);
+			Tag=Ccrud.Create(checkIn);
+		}
+		
+		if(Tag) {
+			Room room=new Room();//最后更改房间状态
+			room.setRno(this.Rno);
+			Tag=RoomUpdate.ChangeRoomRcondition(room);
+		}
 	
+		return Tag;//向数据库中添加数据。并返回是否成功
+	}
 	
 	
 	
@@ -127,17 +156,24 @@ public class CheckInInPutAction extends ActionSupport{
 	
 	public void setRtype(int Rtype) {
 		this.Rtype=Rtype;
-		System.out.println(Rtype);
+	}
+	
+	public void setAllMoney(double AllMoney) {
+		this.AllMoney=AllMoney;
 	}
 	
 	//
-	//get方法没有写：
-	//应该用不到，所以没写
+	//get方法暂时没有写：
 	//
 	//
 	public double getAllMoney() {
+
+		//System.out.println("this.AllMoney");
 		return this.AllMoney;
 	}
 	
+	public String getCID() {
+		return this.CID;
+	}
 	
 }

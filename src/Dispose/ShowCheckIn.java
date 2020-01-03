@@ -11,7 +11,7 @@ public class ShowCheckIn {
  * 
  * 用于展示换、退、续房的初始化界面
  * 查询CheckIn表
- * 被SelectPage类调用
+ * 
  * 
  * 
  * */
@@ -21,6 +21,7 @@ public class ShowCheckIn {
 	
 	
 	//查询未退房的CheckIn表
+	//被SelectPage类调用
 	public ArrayList<CheckIn> getCheckInList() {
 		
 		
@@ -34,9 +35,7 @@ public class ShowCheckIn {
 			Date d=gTime.toTime(c);
 			c.setOutTime(d);
 		}
-		
 			System.out.print("\n");
-		
 		return this.CheckInList;
 	}
 	

@@ -32,6 +32,17 @@
 			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
 		</action>
 	
+		<!-- 退房功能 -->
+		<action name="AOTimeActionO" class="com.sjk.action.ACOTimeAction_O">
+			<result name="S">/Page/ACOTime.jsp</result>
+		</action>
+	
+		<!-- 续房功能 -->
+		<action name="AOTimeActionA" class="com.sjk.action.ACOTimeAction_A">
+			<result name="S">/Page/ACO/AddTime.jsp</result>
+		</action>
+	
+	
 	</package>
 
 

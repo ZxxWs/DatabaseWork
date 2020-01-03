@@ -6,7 +6,7 @@
     <class name="TableClass.CheckIn" table="CHECKIN">
         <id name="CID" type="java.math.BigInteger">
             <column name="CID" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
         <property name="Gno" type="java.lang.String">
             <column name="GNO" />
@@ -34,9 +34,6 @@
         </property>
         <property name="BackNo" type="java.lang.String">
             <column name="BACKNO" />
-        </property>
-        <property name="N" type="java.math.BigInteger" access="field">
-            <column name="N" />
         </property>
     </class>
 </hibernate-mapping>

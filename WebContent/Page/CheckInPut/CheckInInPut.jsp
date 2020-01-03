@@ -20,16 +20,8 @@
 	%>
 
 
-
-
-
-
-
-
-
 	<s:form action="CheckInAction"><!-- 入住信息表单 -->
-		
-		
+	
 		<s:textarea name="Gname" value="姓名："></s:textarea>
 		<s:textarea name="Gno" value="身份证号"></s:textarea>
 		<s:textarea name="Gtel" value="电话："></s:textarea>
@@ -41,11 +33,7 @@
 
 	    <s:submit value="入住"/><!-- 默认type="input" -->
 	    
-	    
 	</s:form>
-
-
-
 
 </body>
 

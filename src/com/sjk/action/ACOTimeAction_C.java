@@ -2,8 +2,9 @@ package com.sjk.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ACOTimeAction extends ActionSupport{
+public class ACOTimeAction_C extends ActionSupport{
 
+	
 	/**
 	 * 
 	 */
@@ -12,10 +13,7 @@ public class ACOTimeAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 
-	
 		return "S";
 	}
-	
-	
 	
 }

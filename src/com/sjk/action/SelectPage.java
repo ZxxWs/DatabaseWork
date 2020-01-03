@@ -52,7 +52,6 @@ public class SelectPage  extends ActionSupport{
 	}
 	
 	
-	
 	public void setRoomList() {
 		ShowRoom showRoom=new ShowRoom();
 		this.RoomList=showRoom.getRoomList();
@@ -62,20 +61,15 @@ public class SelectPage  extends ActionSupport{
 		return this.RoomList;
 	}
 	
-	
 	public void setACOTimeList() {
-		
 		ShowCheckIn showCheckIn=new ShowCheckIn();
 		this.ACOTimeList=showCheckIn.getCheckInList();
-	
 	}
 	
 	public ArrayList<CheckIn> getACOTimeList() {
 
 		return this.ACOTimeList;
 	}
-	
-	
 	
 	
 	

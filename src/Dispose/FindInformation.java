@@ -11,10 +11,13 @@ public class FindInformation {
 
 /**
  * 废弃代码	！	！	！	！	！	！	！	！	！	！	！	！	！	！	
+ * 
+ * 		之前被Action包的FindAction调用
+ * 
+ * 
  * 查询界面的主要逻辑代码
  * 通过传过来的参数来查询
  * 
- * 被Action包的FindAction调用
  * Time:2020.1.1|20:05
  * By:Zxx
  * */

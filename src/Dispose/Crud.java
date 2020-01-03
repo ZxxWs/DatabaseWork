@@ -56,6 +56,7 @@ public class Crud<Obj> {
 					ReList = (ArrayList<Obj>) query.list();
 				}
 				else{//通过主键来查询某个对象
+					System.out.println(obj.toString());
 					ReList.add((Obj) session.get(obj.getClass(),obj.toString()));
 				}
 			}	
@@ -65,7 +66,7 @@ public class Crud<Obj> {
 			}
 			transaction.commit();
 		} catch (Exception e) {
-			System.out.print("查询失败");
+			System.out.print("Crud查询失败");
 		}
 		HibernateUtil.closeSession();
 		return ReList;
