@@ -25,7 +25,9 @@
 		            <th>入住时间</th>
 		            <th>开房时长</th>
 		            <th>截止时间</th>    
-		        	<th>选择</th> 
+		        	<th>退房</th> 
+		        	<th>续房</th> 
+		        	<th></th> 
 		        </tr>
 	        </thead>
 	        
@@ -56,16 +58,15 @@
 	        </s:iterator>	
     	</table>
     	
-    	
-    	
-    	<form id="AOTimeActionO" action="AOTimeActionO"  target="AOTimeActionO">
-	        <!-- 隐藏表单用于传参-->
+
+    	<form id="AOTimeActionO" action="AOTimeActionO" method="post" target="_parent">
+	        <!-- 退房的传参-->
 	        <input type="hidden" name="CID" id="CID" value="null">
     	</form>
 
 
-		<form id="AOTimeActionA" action="AOTimeActionA"  target="AOTimeActionA">
-	        <!-- 隐藏表单用于传参-->
+		<form id="AOTimeActionA" action="AOTimeActionA" method="post" target="_parent">
+	        <!-- 续房的传参-->
 	        
 	        <input type="hidden" name="CID" id="CIDA" value="null">
 	        <input type="hidden" name="AddTime" id="AddTime" value="null">
@@ -74,11 +75,18 @@
     	
     	<script type="text/javascript">
 
-    	var  c='<s:property value="AllTime/24"/>';
+    	var  c='<s:property value="Cond"/>';
     	if(c==1){
     		alert("退房成功")
        	}else if(c==-1){
 			alert("退房失败")
+        }else if(c==-2){
+        	alert("续房失败")
+        }else if(c==2){//如果续房成功就弹出交款界面
+
+        	var AddMoney='<s:property value="AddMoney"/>'
+        	open ('/SJK/Page/ACO/AddTime.jsp?AddMoney='+AddMoney, '续房成功' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+    		
         }
 
     	
@@ -92,19 +100,25 @@
 			}
 
 			function AddTime(CID,AllTime){//退房
-				var SureAdd=0
+				var SureAdd
+				var inPut
 				if(AllTime<24){
-					SureAdd=parseInt(prompt("请输入续房时间（单位：小时）","1"));
+					inPut=prompt("请输入续房时间（单位：小时）","");
+					if(inPut!=null){
+						SureAdd=parseInt(inPut);
+					}
 				}else{
-					SureAdd=parseInt(prompt("请输入续房时间（单位：天）", "1"))*24;
+					inPut=prompt("请输入续房时间（单位：天）", "");
+					SureAdd=parseInt(inPut)*24;
 				}
-				
-				document.getElementById("CIDA").value=CID;
-				document.getElementById("AddTime").value=SureAdd;
-            	document.getElementById("AOTimeActionA").submit();
-				
-			}
+				if(inPut!=null){
+					document.getElementById("CIDA").value=CID;
+					document.getElementById("AddTime").value=SureAdd;
+	            	document.getElementById("AOTimeActionA").submit();
+				}
+	    	}
 
+			
 			
 
     	</script>

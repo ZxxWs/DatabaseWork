@@ -21,7 +21,7 @@
 	       </ul>
 	</div>
 
- 	<form id="SelectPage" action="SelectPage"  target="ShowPage">
+ 	<form id="SelectPage" action="SelectPage"  target="_parent">
         <!-- 隐藏表单用于传参-->
         <input type="hidden" name="Page" id="Page" value="null">
     </form>

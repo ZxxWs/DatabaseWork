@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import Dispose.CheckInUpdate;
 import Dispose.Crud;
+import Dispose.FindCheckInByCID;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Room;
@@ -44,10 +45,8 @@ public class ACOTimeAction_O extends ActionSupport{
 		
 		if(Tag) {	//如果退房操作表操作成功，则改房间的状态
 			Room room=new Room();
-			Crud<CheckIn> crud=new Crud<>();
-			System.out.println(checkIn.getCID());
-			ArrayList<CheckIn> checkIns=crud.Read(checkIn,"");
-			room.setRno(checkIns.get(0).getRno());
+			
+			room.setRno(FindCheckInByCID.getByCID(checkIn.getCID()).getRno());
 		
 			Tag=RoomUpdate.ChangeRoomRcondition(room);
 		}
@@ -55,11 +54,8 @@ public class ACOTimeAction_O extends ActionSupport{
 	}
 	
 	
-	
-	
 	public void setCID(BigInteger CID) {
 	      this.CID=CID;
-
 			System.out.println("CID");
 			System.out.print(CID);
 	}

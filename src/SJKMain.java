@@ -5,7 +5,9 @@ import java.util.Date;
 import com.mysql.jdbc.StringUtils;
 import com.sun.swing.internal.plaf.basic.resources.basic;
 
+import Dispose.CheckInUpdate;
 import Dispose.Crud;
+import Dispose.FindCheckInByCID;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Guest;
@@ -57,7 +59,13 @@ public class SJKMain {
 	
 	private static void b() {
 		
+		CheckIn checkIn=new CheckIn();
+		checkIn.setCID(new BigInteger("10000000000000000016"));
 		
+//		Crud<CheckIn> crud=new Crud<>();
+//		crud.Read(checkIn,"");
+//		CheckInUpdate.OutCheckIn(checkIn);
+		FindCheckInByCID.getByCID(checkIn.getCID());
 		
 	}
 

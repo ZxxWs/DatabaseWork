@@ -23,8 +23,6 @@ public class ShowCheckIn {
 	//查询未退房的CheckIn表
 	//被SelectPage类调用
 	public ArrayList<CheckIn> getCheckInList() {
-		
-		
 		Crud<CheckIn> crud=new Crud<>();
 		String HQL="from CheckIn where OutTime is null";
 		CheckIn checkIn=new CheckIn();

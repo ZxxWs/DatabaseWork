@@ -16,7 +16,7 @@ public class CheckInUpdate {
 	
 	
 	
-	//添加退房时间
+	//客人退房数据库处理-添加退房时间
 	public static Boolean OutCheckIn(CheckIn checkIn) {
 		
 		Boolean Tag=new Boolean(true);
@@ -28,27 +28,30 @@ public class CheckInUpdate {
 			newcheckIn.setOutTime(new Date());
 			transaction.commit();
 		} catch (Exception e) {
-			System.out.print("CheckInUpdate.OutCheckIn失败");
+			System.out.print("Dispose.CheckInUpdate.OutCheckIn失败");
 			Tag=false;
 		}
 		HibernateUtil.closeSession();	
 		return Tag;
 	}
 	
+	
 	//续房功能-添加入住时间
-	public static Boolean AddTimeCheckIn(CheckIn checkIn) {
+	public static Boolean AddTimeCheckIn(CheckIn checkIn,int AddTime,double AddMoney) {
 		
 		Boolean Tag=new Boolean(true);
 		Session session = null;
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
-			
 			CheckIn newcheckIn=(CheckIn) session.get(CheckIn.class,checkIn.getCID());
-			newcheckIn.setOutTime(new Date());
+			AddTime=newcheckIn.getAllTime()+AddTime;
+			AddMoney=newcheckIn.getAllMoney()+AddMoney;
+			newcheckIn.setAllTime(AddTime);
+			newcheckIn.setAllMoney(AddMoney);
 			transaction.commit();
 		} catch (Exception e) {
-			System.out.print("CheckInUpdate.AddTimeCheckIn失败");
+			System.out.print("Dispose.CheckInUpdate.AddTimeCheckIn失败");
 			Tag=false;
 		}
 		HibernateUtil.closeSession();	

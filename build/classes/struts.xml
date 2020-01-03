@@ -14,13 +14,16 @@
 			<result name="Success" type="redirect">SelectPage.action?Page=0</result>
 		</action>	
 	
-		<action name="SelectPage" class="com.sjk.action.SelectPage" method="execute">
-			<result name="0" >/Page/CheckIn.jsp</result>
-			<result name="1" >/Page/ACOTime.jsp</result>
-			<result name="2" >/Page/FindInformation.jsp</result>
-			<result name="3" >/Page/Change.jsp</result>
-			<result name="4" type="redirect">index.html</result>
+			<!-- 退房功能 -->
+		<action name="AOTimeActionO" class="com.sjk.action.ACOTimeAction_O">
+			<result name="S" type="redirect">SelectPage.action?Page=1</result>
 		</action>
+	
+		<!-- 续房功能 -->
+		<action name="AOTimeActionA" class="com.sjk.action.ACOTimeAction_A">
+			<result name="S" type="redirect">SelectPage.action?Page=1</result>
+		</action>
+	
 	
 		<action name="FindAction" class="com.sjk.action.FindAction" method="execute">
 			<result name="S">/Page/FindInformation.jsp</result>
@@ -32,16 +35,14 @@
 			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
 		</action>
 	
-		<!-- 退房功能 -->
-		<action name="AOTimeActionO" class="com.sjk.action.ACOTimeAction_O">
-			<result name="S">/Page/ACOTime.jsp</result>
+		<!-- 页面选择按钮 -->
+		<action name="SelectPage" class="com.sjk.action.SelectPage" method="execute">
+			<result name="0" >/Page/CheckIn.jsp</result>
+			<result name="1" >/Page/ACOTime.jsp</result>
+			<result name="2" >/Page/FindInformation.jsp</result>
+			<result name="3" >/Page/Change.jsp</result>
+			<result name="4" type="redirect">index.html</result>
 		</action>
-	
-		<!-- 续房功能 -->
-		<action name="AOTimeActionA" class="com.sjk.action.ACOTimeAction_A">
-			<result name="S">/Page/ACO/AddTime.jsp</result>
-		</action>
-	
 	
 	</package>
 

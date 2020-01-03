@@ -11,8 +11,6 @@
 输入入住信息
 
 
-
-
 	<%
 		String Rno=request.getParameter("Rno");
 		String Rprice=request.getParameter("Rprice");
@@ -46,8 +44,6 @@
 
 </body>
 
-<script>
-	var Rno=<%=request.getParameter("Rno")%>
-</script>
+
 
 </html>

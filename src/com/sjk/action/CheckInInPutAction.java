@@ -1,7 +1,9 @@
 package com.sjk.action;
 
+import java.math.BigInteger;
 import java.util.Date;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sun.org.apache.regexp.internal.recompile;
 
 import Dispose.Crud;
 import Dispose.RoomUpdate;
@@ -31,14 +33,14 @@ public class CheckInInPutAction extends ActionSupport{
 	private String Gtel;
 	private String Gtel1;
 	
-	private String Rno;//单双人间一样的值
+	private String Rno;
 	private int AllTime;
 	private double Rprice;
 	private int Rtype;//开房的种类，用于计算价格和代码逻辑分类
 
 	//返回值
 	private double AllMoney;
-	private String CID;
+	private BigInteger CID;
 	
 	@Override
 	public String execute() throws Exception {
@@ -52,7 +54,7 @@ public class CheckInInPutAction extends ActionSupport{
 	}
 	
 	/**
-	 * ,如果倒数第二位数是奇数那么就是男性,如果是偶数那么就是女性
+	 * 如果倒数第二位数是奇数那么就是男性,如果是偶数那么就是女性
 	 * 
 	 * */
 	
@@ -116,8 +118,6 @@ public class CheckInInPutAction extends ActionSupport{
 		return Tag;//向数据库中添加数据。并返回是否成功
 	}
 	
-	
-	
 	public void setGno(String Gno) {
 		this.Gno=Gno;
 	}
@@ -162,17 +162,56 @@ public class CheckInInPutAction extends ActionSupport{
 		this.AllMoney=AllMoney;
 	}
 	
-	//
-	//get方法暂时没有写：
-	//
-	//
+	public void setCID(BigInteger CID) {
+		this.CID=CID;
+	}
+	
+	public String getGno() {
+		return this.Gno;
+	}
+	
+	public String getGno1() {
+		return this.Gno1;
+	}
+	
+	public String getGname() {
+		return this.Gname;
+	}
+	
+	public String getGame1() {
+		return this.Gname1;
+	}
+	
+	public String getGtel() {
+		return this.Gtel;
+	}
+	
+	public String getGtel1() {
+		return this.Gtel1;
+	}
+	
+	public String getRno() {
+		return this.Rno;
+	}
+	
+	public int getAllTime() {
+		return this.AllTime;
+	}
+	
+	public double getRprice() {
+		return this.Rprice;
+	}
+	
+	public int getRtype() {
+		return this.Rtype;
+	}
+	
 	public double getAllMoney() {
-
-		//System.out.println("this.AllMoney");
+		System.out.println("this.AllMoney");
 		return this.AllMoney;
 	}
 	
-	public String getCID() {
+	public BigInteger getCID() {
 		return this.CID;
 	}
 	

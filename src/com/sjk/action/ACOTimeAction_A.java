@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import Dispose.CheckInUpdate;
 import Dispose.Crud;
+import Dispose.FindCheckInByCID;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Room;
@@ -20,14 +21,22 @@ public class ACOTimeAction_A extends ActionSupport{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String CID;//操作的流水ID
-	private Boolean Cond;//是否成功操作	
+	private BigInteger CID;//操作的流水ID
+	private int Cond=0;//是否成功操作	2:成功	-2失败	
 	private int AddTime;//传过来的是小时
+	private double AddMoney;
 	
 	@Override
 	public String execute() throws Exception {//S,
 
 	
+		if(Add()) {
+			this.Cond=2;
+		}else {
+			this.Cond=-2;
+		}
+		
+		
 		return "S";
 	}
 	
@@ -38,66 +47,64 @@ public class ACOTimeAction_A extends ActionSupport{
 	public Boolean Add() {
 		Boolean Tag=new Boolean(true);
 		
+		double Rprice;//先查询一下现在的房间价格
+		CheckIn checkIn=FindCheckInByCID.getByCID(this.CID);
+		Room room=new Room();
+		room.setRno(checkIn.getRno());
+		Crud<Room> crud=new Crud<>();
+		ArrayList<Room> list=crud.Read(room,"");
+		Rprice=list.get(0).getRprice();
 		
+		if(this.AddTime<24) {
+			this.AddMoney=this.AddTime*Rprice;
+		}else {
+			this.AddMoney=(this.AddTime/24)*Rprice;
+		}
 		
+		CheckInUpdate.AddTimeCheckIn(checkIn, this.AddTime, this.AddMoney);	
 		return Tag;
 	}
 	
 	
 	
-	public void setCID(String CID) {
+	public void setCID(BigInteger CID) {
 	    this.CID=CID;
-
-		System.out.println("CID");
-		System.out.print(CID);
 	}
 	
-	public void setCond(Boolean Cond) {
+	public void setCond(int Cond) {
 	    this.Cond=Cond;
-
 	}
 	
 	public void setAddTime(int AddTime) {//这里单位为小时，前端控制
 		this.AddTime=AddTime;
-		System.out.println("AddTime");
-		System.out.print(AddTime);
 	}
 	
+	public void setAddMoney(double AddMoney) {
+		this.AddMoney=AddMoney;
+	}
 	
-	public String getCID(){         
+	public BigInteger getCID(){         
 		return this.CID;
-		
 	}
 
-	public Boolean getCond() {
+	public int getCond() {
 		return this.Cond;
 	}
-	
 	
 	public int getAddTime() {
 		return this.AddTime;
 	}
 	
+	public double getAddMoney() {
+		return this.AddMoney;
+	}
+	
+	
+	
+	
+	
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
