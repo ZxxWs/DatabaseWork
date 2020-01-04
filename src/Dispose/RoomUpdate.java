@@ -6,7 +6,11 @@ import org.hibernate.Transaction;
 import TableClass.Room;
 
 public class RoomUpdate {
-
+/**
+ * 房间表的数据库处理。
+ * 方法：
+ * 		ChangeRoomRcondition-修改房间的状态（静态）
+ * */
 	
 	public static Boolean ChangeRoomRcondition(Room room) {
 

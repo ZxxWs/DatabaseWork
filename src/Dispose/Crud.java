@@ -77,10 +77,8 @@ public class Crud<Obj> {
 		
 	}
 	
-	public void Delete() {
+	public void Delete(Obj obj) {
 		
 	}
-	
-
 	
 }

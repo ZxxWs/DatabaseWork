@@ -81,7 +81,6 @@ public class CheckInInPutAction extends ActionSupport{
 			this.AllTime*=24;
 		}
 
-
 		Guest guest=new Guest(this.Gno,this.Gname,Sex,this.Gtel);//不管单双人房，先登记一个
 		Gcrud.Create(guest);
 		

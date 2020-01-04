@@ -32,7 +32,7 @@
 	
 		<!-- 查询表单 -->
 		<action name="FindInformationAction" class="com.sjk.action.FindInformationAction" method="execute">
-			<result name="S" type="chain">SelectPage</result> 
+			<result name="S">/Page/FindInformation.jsp</result> 
 			
 		</action>
 	

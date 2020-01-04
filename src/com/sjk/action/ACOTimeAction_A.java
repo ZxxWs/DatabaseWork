@@ -29,19 +29,14 @@ public class ACOTimeAction_A extends ActionSupport{
 	@Override
 	public String execute() throws Exception {//S,
 
-	
 		if(Add()) {
 			this.Cond=2;
 		}else {
 			this.Cond=-2;
 		}
 		
-		
 		return "S";
 	}
-	
-	
-
 	
 	//续房方法
 	public Boolean Add() {
@@ -64,8 +59,6 @@ public class ACOTimeAction_A extends ActionSupport{
 		CheckInUpdate.AddTimeCheckIn(checkIn, this.AddTime, this.AddMoney);	
 		return Tag;
 	}
-	
-	
 	
 	public void setCID(BigInteger CID) {
 	    this.CID=CID;
@@ -98,15 +91,5 @@ public class ACOTimeAction_A extends ActionSupport{
 	public double getAddMoney() {
 		return this.AddMoney;
 	}
-	
-	
-	
-	
-	
-	
 }
-
-
-
-
 

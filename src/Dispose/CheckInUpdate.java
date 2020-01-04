@@ -11,9 +11,10 @@ import TableClass.Room;
 public class CheckInUpdate {
 /**
  * 入住关系的更新类。想的是只有静态方法
- * 
+ * 方法：
+ * 		OutCheckIn退房处理-添加退房时间
+ * 		AddTimeCheckIn续房功能-修改入住时间
  * */
-	
 	
 	
 	//客人退房数据库处理-添加退房时间
@@ -57,7 +58,5 @@ public class CheckInUpdate {
 		HibernateUtil.closeSession();	
 		return Tag;
 	}
-	
-	
 	
 }

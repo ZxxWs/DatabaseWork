@@ -22,7 +22,6 @@ public class FindInformation {
  * By:Zxx
  * */
 
-
 	private ArrayList<Room> RoomList;
 	private ArrayList<CheckIn> CheckInList;
 	private ArrayList<Guest> GuestList;
@@ -67,7 +66,6 @@ public class FindInformation {
 		
 	}
 	
-
 	//通过管理员工号查询
 	public void setByPno(String Pno) {
 		

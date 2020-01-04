@@ -33,15 +33,11 @@ public class FindInformationAction extends ActionSupport{
 	private ArrayList<Guest> GuestList;
 	private ArrayList<Principal> PrincipalList;
 	
-	private int test;
 	
 	@Override
 	public String execute() throws Exception {
 
-		this.test=0;
 		
-		System.out.println(this.FindMethod);
-		System.out.println(this.FindNum);
 		switch (this.FindMethod) {
 		case 1:
 			setByGno(this.FindNum);
@@ -63,7 +59,7 @@ public class FindInformationAction extends ActionSupport{
 	 * */
 	private void setByGno(String Gno) {
 		
-		String HQL="from CheckIn where Gno="+Gno;
+		String HQL="from CheckIn where Gno="+Gno+" or Gno1="+Gno;
 		Guest guest=new Guest();
 		CheckIn checkIn=new CheckIn();
 		guest.setGno(Gno);
@@ -123,7 +119,6 @@ public class FindInformationAction extends ActionSupport{
 	}
 	
 	public Boolean getTag() {
-		System.out.println("GetTag÷¥––");
 		return this.Tag;
 	}
 	
@@ -131,7 +126,7 @@ public class FindInformationAction extends ActionSupport{
 		return this.RoomList;
 	}
 	
-	public ArrayList<CheckIn> getCheakInList() {
+	public ArrayList<CheckIn> getCheckInList() {
 		return this.CheckInList;
 	}
 	
@@ -142,19 +137,5 @@ public class FindInformationAction extends ActionSupport{
 	public ArrayList<Principal> getPrincipalList(){
 		return this.PrincipalList;
 	}
-	
-	
-	public void setest(int test) {
-		this.test=test;
-	}
-	
-	public int gettest() {
-		return this.test;
-	}
-	
-	
-	
-	
-	
 	
 }

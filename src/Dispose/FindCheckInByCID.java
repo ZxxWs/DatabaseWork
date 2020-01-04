@@ -19,7 +19,6 @@ public class FindCheckInByCID {
  * By:Zxx
  * */
 	
-	
 	public static CheckIn getByCID(BigInteger CID) {
 		CheckIn checkIn=new CheckIn();
 		
@@ -36,5 +35,4 @@ public class FindCheckInByCID {
 
 		return checkIn;
 	}
-	
 }

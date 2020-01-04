@@ -10,11 +10,10 @@ public class ShowRoom {
 	
 	public ArrayList<Room> getRoomList() {
 		/**
-		 * 用于查询Room表的
-		 * 
+		 * 用于查询Room表中房间无人的表
+		 * 返回值为一个对象列表
+		 * （应该是被SelectPage类调用）
 		 * */
-		
-		
 		Crud<Room> crud=new Crud<>();
 		this.RoomList=crud.Read(new Room(),"from Room where Rcondition=0");
 		

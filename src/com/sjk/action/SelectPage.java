@@ -24,7 +24,6 @@ public class SelectPage  extends ActionSupport{
 	private ArrayList<Room> RoomList;//开房页面的初始化
 	private ArrayList<CheckIn> ACOTimeList;//换房、退房、续房界面初始化
 	
-	
 	@Override
 	public String execute() throws Exception {
 
@@ -70,7 +69,5 @@ public class SelectPage  extends ActionSupport{
 
 		return this.ACOTimeList;
 	}
-	
-	
 	
 }

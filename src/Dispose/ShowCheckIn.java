@@ -18,10 +18,12 @@ public class ShowCheckIn {
 	
 	private ArrayList<CheckIn> CheckInList;
 	
+	/**
+	 * 查询未退房的CheckIn表
+	 * 被SelectPage类调用
+	 * 将查询结果的对象OutTime属性设置为预计退房时间
+	 * */
 	
-	
-	//查询未退房的CheckIn表
-	//被SelectPage类调用
 	public ArrayList<CheckIn> getCheckInList() {
 		Crud<CheckIn> crud=new Crud<>();
 		String HQL="from CheckIn where OutTime is null";
@@ -33,10 +35,6 @@ public class ShowCheckIn {
 			Date d=gTime.toTime(c);
 			c.setOutTime(d);
 		}
-			System.out.print("\n");
 		return this.CheckInList;
 	}
-	
-	
-	
 }
