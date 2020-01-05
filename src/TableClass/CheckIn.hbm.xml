@@ -8,32 +8,42 @@
             <column name="CID" />
             <generator class="identity" />
         </id>
+        
         <property name="Gno" type="java.lang.String">
             <column name="GNO" />
         </property>
+        
         <property name="Gno1" type="java.lang.String">
             <column name="GNO1" />
         </property>
+        
         <property name="Rno" type="java.lang.String">
             <column name="RNO" />
         </property>
+        
         <property name="InTime" type="java.util.Date">
             <column name="INTIME" />
         </property>
+        
         <property name="OutTime" type="java.util.Date">
             <column name="OUTTIME" />
         </property>
+        
         <property name="AllTime" type="int">
             <column name="ALLTIME" />
         </property>
+        
         <property name="AllMoney" type="double">
             <column name="ALLMONEY" />
         </property>
-        <property name="FrontNo" type="java.lang.String">
-            <column name="FRONTNO" />
+        
+		 <property name="ChangeNo" type="java.lang.String">
+            <column name="CHANGENO" />
         </property>
-        <property name="BackNo" type="java.lang.String">
-            <column name="BACKNO" />
+        
+  		<property name="ChangeTime" type="java.util.Date">
+            <column name="CHANGETIME" />
         </property>
+
     </class>
 </hibernate-mapping>

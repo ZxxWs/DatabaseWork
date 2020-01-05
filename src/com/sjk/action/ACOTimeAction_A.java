@@ -39,7 +39,7 @@ public class ACOTimeAction_A extends ActionSupport{
 	}
 	
 	//续房方法
-	public Boolean Add() {
+	private Boolean Add() {
 		Boolean Tag=new Boolean(true);
 		
 		double Rprice;//先查询一下现在的房间价格

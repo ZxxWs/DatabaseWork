@@ -27,6 +27,4 @@ public class getOutTime {
 		return ReDate;
 	}
 	
-	
-	
 }

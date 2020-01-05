@@ -24,9 +24,20 @@
 		<action name="AOTimeActionO" class="com.sjk.action.ACOTimeAction_O">
 			<result name="S" type="chain">SelectPage</result> 
 		</action>
-	
+		
 		<!-- 续房功能 -->
 		<action name="AOTimeActionA" class="com.sjk.action.ACOTimeAction_A">
+			<result name="S" type="chain">SelectPage</result> 
+		</action>
+		
+		<!-- 换房功能-展示可用房间 -->
+		<action name="AOTimeActionC_Show" class="com.sjk.action.ACOTimeAction_C_Show">
+			<result name="S" >/Page/ACO/ChangeTime.jsp</result> 
+		</action>
+		
+		<!-- 换房功能-选择更换的房间 -->
+		<action name="AOTimeActionC" class="com.sjk.action.ACOTimeAction_C">
+			<!--原 <result name="S" >/Page/ACO/ChangeTimeS.jsp</result> --> 
 			<result name="S" type="chain">SelectPage</result> 
 		</action>
 	

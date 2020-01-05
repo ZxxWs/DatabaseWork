@@ -27,17 +27,24 @@
 		            <th>截止时间</th>    
 		        	<th>退房</th> 
 		        	<th>续房</th> 
+		        	<th>换房</th> 
 		        	<th></th> 
 		        </tr>
 	        </thead>
 	        
-			<s:iterator value="ACOTimeList" >
+			<s:iterator value="ACOTimeList" ><!-- 表格的填充 -->
 	        	<tr>
 	        	
 	        	   <td><s:property value="CID"/></td>
 	                <td><s:property value="Gno"/></td>
 	                <td><s:property value="Gno1"/></td>
-	                <td><s:property value="Rno"/></td>
+	                <s:if test="ChangeNo!=null">
+	               		<td><s:property value="ChangeNo"/></td>
+	                </s:if>
+	                <s:else>
+	                	<td><s:property value="Rno"/></td>
+	                </s:else>
+	                
 	                <td><s:property value="InTime.getMonth()+1"/>月<s:property value="InTime.getDate()"/>日 <s:property value="InTime.getHours()"/>:<s:property value="InTime.getMinutes()"/></td>
 	                
 	                <s:if test="AllTime<24">
@@ -50,9 +57,18 @@
 	                <td><s:property value="OutTime.getMonth()+1"/>月<s:property value="OutTime.getDate()"/>日 <s:property value="OutTime.getHours()"/>:<s:property value="OutTime.getMinutes()"/></td>
 	             	<td>
 	             		<input class="btn"  type="button" value="退房" onclick="OutTime('<s:property value="CID"/>')">
-	            		<input class="btn" name="edit" type="button" value="续房" onclick="AddTime('<s:property value="CID"/>','<s:property value="AllTime"/>')">
-	            		
 	             	</td>
+	             	<td>
+	             		<input class="btn"  type="button" value="续房" onclick="AddTime('<s:property value="CID"/>','<s:property value="AllTime"/>')">
+	             	</td>
+	             	<td>
+		             	<s:if test="ChangeNo!=null">
+		               		已经换过房
+		                </s:if>
+		                <s:else>
+		                	<input class="btn"  type="button" value="换房" onclick="ChangeTime('<s:property value="CID"/>')">
+		                </s:else>
+		             		</td>
 	             </tr>
 	        
 	        </s:iterator>	
@@ -68,11 +84,17 @@
 
 		<form id="AOTimeActionA" action="AOTimeActionA" method="post" target="_parent">
 	        <!-- 续房的传参-->
-	        
 	        <input type="hidden" name="Page"  value="1">
 	        <input type="hidden" name="CID" id="CIDA" value="null">
 	        <input type="hidden" name="AddTime" id="AddTime" value="null">
     	</form>
+    	
+    	
+    	<form id="AOTimeActionC_Show" action="AOTimeActionC_Show" method="post" >
+	        <!-- 换房的传参-->
+	        <input type="hidden" name="CID" id="CIDC" value="null">
+    	</form>
+    	
     	
     	
     	<script type="text/javascript">
@@ -85,11 +107,14 @@
         }else if(c==-2){
         	alert("续房失败")
         }else if(c==2){//如果续房成功就弹出交款界面
-
         	var AddMoney='<s:property value="AddMoney"/>'
         	open ('/SJK/Page/ACO/AddTime.jsp?AddMoney='+AddMoney, '续房成功' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
-    		
+        }else if(c==-3){
+        	alert("换房失败")
+        }else if(c==3){
+        	alert("换房成功")
         }
+        
 
     	
 		//三种按钮点击后的逻辑
@@ -101,7 +126,7 @@
 				}
 			}
 
-			function AddTime(CID,AllTime){//退房
+			function AddTime(CID,AllTime){//续房
 				var SureAdd
 				var inPut
 				if(AllTime<24){
@@ -120,9 +145,11 @@
 				}
 	    	}
 
+			function ChangeTime(CID){//换房
+					document.getElementById("CIDC").value=CID;
+	            	document.getElementById("AOTimeActionC_Show").submit();
+			}
 			
-			
-
     	</script>
     
 </body>

@@ -10,7 +10,7 @@ public class CheckIn {
 	 * CheckIn表的实体类
 	 * 下列变量分别为：交易流水号、客人ID（身份证号）、房间号、
 	 * 				   入住时间、退房时间、开房时长、
-	 * 				   换房前房间号、换房后房号
+	 * 				   换房后房间号、换房时间
 	 * 
 	 * 类中包含两个构造函数（有参、无参）以及所有的set、get方法(真长）
 	 * 
@@ -25,8 +25,9 @@ public class CheckIn {
 	private Date OutTime;
 	private int AllTime;
 	private double AllMoney;
-	private String FrontNo;
-	private String BackNo;
+	private String ChangeNo;
+	private Date ChangeTime;
+	
 	private BigInteger N;//用于Hibernate的主键查询
 	
 	public CheckIn() {
@@ -83,14 +84,15 @@ public class CheckIn {
 		this.AllMoney=AllMoney;
 	}
 	
-	public void setFrontNo(String FrontNo) {
-		this.FrontNo=FrontNo;
+	public void setChangeNo(String ChangeNo) {
+		this.ChangeNo=ChangeNo;
 	}
 	
-	public void setBackNo(String BackNo) {
-		this.BackNo=BackNo;
+	public void setChangeTime(Date ChangeTime) {
+		this.ChangeTime=ChangeTime;
 	}
-	
+
+
 	public BigInteger getCID() {
 		return this.CID;
 	}
@@ -123,14 +125,13 @@ public class CheckIn {
 		return this.AllMoney;
 	}
 	
-	public String getFrontNo() {
-		return this.FrontNo;
+	public String getChangeNo() {
+		return this.ChangeNo;
 	}
 	
-	public String getBackNo() {
-		return this.BackNo;
+	public Date getChangeTime() {
+		return this.ChangeTime;
 	}
-	
 	@Override
 	public String toString() {
 		return String.valueOf(this.N);

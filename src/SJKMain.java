@@ -59,13 +59,20 @@ public class SJKMain {
 	
 	private static void b() {
 		
-		CheckIn checkIn=new CheckIn();
-		checkIn.setCID(new BigInteger("10000000000000000016"));
+//		CheckIn checkIn=new CheckIn();
+//		checkIn.setCID(new BigInteger("10000000000000000016"));
 		
 //		Crud<CheckIn> crud=new Crud<>();
 //		crud.Read(checkIn,"");
 //		CheckInUpdate.OutCheckIn(checkIn);
-		FindCheckInByCID.getByCID(checkIn.getCID());
+//		FindCheckInByCID.getByCID(checkIn.getCID());
+//		Room room=new Room();
+//		Crud<Room> crud=new Crud<>();
+//		String Rtype="单人间";
+//		String HQL="from Room where Rcondition=0 and Rtype='单人间'";//查询可以换的房间
+//		crud.Read(room, HQL);
+//		this.CanRoomList=rooms;
+		
 		
 	}
 
