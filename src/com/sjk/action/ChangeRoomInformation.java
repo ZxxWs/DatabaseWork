@@ -20,18 +20,19 @@ public class ChangeRoomInformation extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String OldRno;
 	private String NewRno;
-	private int Rtype;
+	private String Rtype;
 	private double Rprice;
 	private int Rcondition;
 	private String Pno;
 
 	private String Crud;//操作类型C\U\D
-	private Boolean IsSuccess=true;
+	private int IsSuccess=0;
 	
 	@Override
 	public String execute() throws Exception {
 
-		if(this.Crud=="C") {
+		System.out.print(this.Crud);
+		if(this.Crud.equals("C")) {
 			Change();
 		}
 		
@@ -40,22 +41,12 @@ public class ChangeRoomInformation extends ActionSupport{
 
 	//修改信息
 	private void Change() {
-		
-		String Type="";
-		if(this.Rtype==0) {
-			Type="单人间";
-		}else if (this.Rtype==1) {
-			Type="双人间";
-		}else if (this.Rtype==2) {
-			Type="单人钟点房";
-		}else if(this.Rtype==3){
-			Type="双人钟点房";
+		Boolean t=RoomUpdate.UpdateAllInformation(this.OldRno,this.Rtype,this.Rprice,this.Rcondition,this.Pno, this.NewRno);
+		if(t) {
+			this.IsSuccess=1;
 		}else {
-			this.IsSuccess=false;
-			return;
+			this.IsSuccess=-1;
 		}
-		this.IsSuccess=RoomUpdate.UpdateAllInformation(this.OldRno, Type, this.Rprice, this.Rcondition, this.Pno, this.NewRno);
-
 	}
 	
 	
@@ -71,7 +62,7 @@ public class ChangeRoomInformation extends ActionSupport{
 		this.NewRno=NewRno;
 	}
 	
-	public void setRtype(int Rtype){
+	public void setRtype(String Rtype){
 		this.Rtype=Rtype;
 	}
 	
@@ -91,7 +82,7 @@ public class ChangeRoomInformation extends ActionSupport{
 		this.Crud=Crud;
 	}
 
-	public void setIsSuccess(Boolean IsSuccess) {
+	public void setIsSuccess(int IsSuccess) {
 		this.IsSuccess=IsSuccess;
 	}
 	/***********************下面是get方法*****************************/
@@ -104,7 +95,7 @@ public class ChangeRoomInformation extends ActionSupport{
 		return this.NewRno;
 	}
 	
-	public int getRtype() {
+	public String getRtype() {
 		return this.Rtype;
 	}
 	
@@ -124,7 +115,7 @@ public class ChangeRoomInformation extends ActionSupport{
 		return this.Crud;
 	}
 	
-	public Boolean getIsSuccess() {
+	public int getIsSuccess() {
 		return this.IsSuccess;
 	}
 }

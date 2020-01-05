@@ -15,41 +15,33 @@
 		String Rprice=request.getParameter("Rprice");
 		String Rcondition=request.getParameter("Rcondition");
 		String Pno=request.getParameter("Pno");
-		
-		int IntTpye;
-		if(Rtype.equals("单人间")){
-			IntTpye=0;
-		}else if(Rtype.equals("双人间")){
-			IntTpye=1;
-		}else if(Rtype.equals("单人钟点房")){
-			IntTpye=2;
-		}else{
-			IntTpye=3;
-		}
-		request.setAttribute("Crud",Crud);
-		request.setAttribute("Rno",Rno);
-		request.setAttribute("Rtype",Rtype);
-		request.setAttribute("Rprice",IntTpye);
-		request.setAttribute("Rcondition",Rcondition);
-		request.setAttribute("Pno",Pno);
+	
+		out.print(Pno);
 	%>
 
 	<!-- 修改房间信息 -->
-	<s:form action="ChangeRoomInformation"><!-- 修改信息表单 -->
-		<s:textarea name="NewRno" value="%{#request.Rno}"></s:textarea>
-		<s:textarea name="Rprice" value="%{#request.Rprice}"></s:textarea>
-		<s:select list="#{0:'单人间',1:'双人间',2:'单人钟点房',3:'双人钟点房'}" name="Rtype" value="%{#request.Rtype}"></s:select>
-		<s:select list="#{0:'空房',1:'房间有人'}" name="Rcondition" value="%{#request.Rcondition}"></s:select>
-		<s:hidden name="OldRno" value="%{#request.Rno}"></s:hidden>
-		<s:hidden name="Crud" value="C"></s:hidden><!-- 用于标记是Crud中的哪个 -->
-	    <s:submit value="确认修改"/><!-- 默认type="input" -->
-	</s:form>
-		
-		
+	<form action="ChangeRoomInformation" id="ChangeRoomFrom" target="_blank">
+                 房间号<input type="text" name="NewRno" value='<%=Rno%>'/><br>
+                 房间类型<select name="Rtype" id="RtypeSelect" >
+			<option value="单人间">单人间</option>
+			<option value="双人间">双人间</option>
+			<option value="单人钟点房">单人钟点房</option>
+			<option value="双人钟点房">双人钟点房</option>
+		</select><br>
+                 房间价格<input type="text" name="Rprice" value='<%=Rprice%>'/><br>
+                 房间状态：<select name="Rcondition" id="RconditionSelect">
+			<option value="0">空房</option>
+			<option value="1">有人</option>
+		</select>	<br>
+                 管理员工号：<input type="text" name="Pno" value='<%=Pno%>'/><br>
+        <input type="hidden" name="OldRno" value='<%=Rno%>'/>
+        <input type="hidden" name="Crud" value='C'/>
+        <input type="button" value="确认修改" onclick="ChangeRoom()" /><br>
+    </form>
 		
 		
 	<!-- 删除此房间 -->
-	 <form action="ChangeRoomInformation" id="DelRoom">
+	 <form action="ChangeRoomInformation" id="DelRoomFrom">
         <input type="hidden" name="Crud" value='D'/><br>
         <input type="hidden" name="OldRno" value='<%=request.getParameter("Rno")%>'/><br>
         <input type="button" value="删除此房间" onclick="DelRoom()" /><br>
@@ -59,13 +51,39 @@
 
 
 	<script type="text/javascript">
-	  function DelRoom() {
-		  var SureDel=confirm("确定删除房间信息")
-			if(SureOut==true){
-				 var form = document.getElementById('DelRoom');
-			     form.submit();
+
+		var varRtype='<%=Rtype%>'//控制下拉列表的默认选项
+		if(varRtype=="单人间"){
+			document.getElementById("RtypeSelect").selectedIndex = "0";
+		}
+		else if(varRtype=="双人间"){
+			document.getElementById("RtypeSelect").selectedIndex = "1";
+		}
+		if(varRtype=="单人钟点房"){
+			document.getElementById("RtypeSelect").selectedIndex = "2";
+		}
+		if(varRtype=="双人钟点房"){
+			document.getElementById("RtypeSelect").selectedIndex = "3";
+		}
+		document.getElementById("RconditionSelect").selectedIndex = "<%=Rcondition%>";
+		
+		function ChangeRoom(){
+			var SureChange=confirm("确定修改房间信息？")
+			if(SureChange==true){
+				var form = document.getElementById('ChangeRoomFrom');
+		     	form.submit();
+		     	//window.close();
 			}
-	  }
+			
+		}
+	
+	  	function DelRoom() {
+		  	var SureDel=confirm("确定删除房间信息")
+				if(SureDel==true){
+					var form = document.getElementById('DelRoomFrom');
+			     	form.submit();
+			}
+	  	}
 	</script>
 
 </body>

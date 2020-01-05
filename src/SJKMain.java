@@ -8,10 +8,11 @@ import com.sun.swing.internal.plaf.basic.resources.basic;
 
 import Dispose.CheckInUpdate;
 import Dispose.Crud;
-import Dispose.FindCheckInByCID;
+import Dispose.CrudCheckInByCID;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Guest;
+import TableClass.Principal;
 import TableClass.Room;
 
 public class SJKMain {
@@ -61,9 +62,11 @@ public class SJKMain {
 	private static void b() {
 		
 //		CheckIn checkIn=new CheckIn();
-//		checkIn.setCID(new BigInteger("10000000000000000016"));
+//		
 		
 //		Crud<CheckIn> crud=new Crud<>();
+//		crud.Delete(checkIn);
+		
 //		crud.Read(checkIn,"");
 //		CheckInUpdate.OutCheckIn(checkIn);
 //		FindCheckInByCID.getByCID(checkIn.getCID());
@@ -75,6 +78,14 @@ public class SJKMain {
 //		this.CanRoomList=rooms;
 		
 		
+		
+		if(CrudCheckInByCID.DeleteByCID(new BigInteger("10000000000000000065"))) {
+			System.out.print("\n\n\nasasa\n\n\n");
+		};
+//		Crud<Principal> crud=new Crud<>();
+//		Principal principal=new Principal();
+//		principal.setPno("004");
+//		crud.Delete(principal);
 	}
 
 

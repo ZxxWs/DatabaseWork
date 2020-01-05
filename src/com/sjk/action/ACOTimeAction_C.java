@@ -1,14 +1,9 @@
 package com.sjk.action;
 
 import java.math.BigInteger;
-import java.util.Date;
-
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import Dispose.CheckInUpdate;
-import Dispose.Crud;
-import Dispose.FindCheckInByCID;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Room;

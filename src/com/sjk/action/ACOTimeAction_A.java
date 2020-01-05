@@ -7,8 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import Dispose.CheckInUpdate;
 import Dispose.Crud;
-import Dispose.FindCheckInByCID;
-import Dispose.RoomUpdate;
+import Dispose.CrudCheckInByCID;
 import TableClass.CheckIn;
 import TableClass.Room;
 
@@ -43,7 +42,7 @@ public class ACOTimeAction_A extends ActionSupport{
 		Boolean Tag=new Boolean(true);
 		
 		double Rprice;//先查询一下现在的房间价格
-		CheckIn checkIn=FindCheckInByCID.getByCID(this.CID);
+		CheckIn checkIn=CrudCheckInByCID.ReadByCID(this.CID);
 		Room room=new Room();
 		room.setRno(checkIn.getRno());
 		Crud<Room> crud=new Crud<>();

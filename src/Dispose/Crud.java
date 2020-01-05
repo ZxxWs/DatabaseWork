@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class Crud<Obj> {
 	
@@ -19,7 +22,7 @@ public class Crud<Obj> {
  * */
 	
 	public Boolean Create(Obj obj) {
-		Boolean Tag=true;//添加成功与否,0为成功
+		Boolean Tag=true;//添加成功与否
 		Session session = null;
 		try {
 			session=HibernateUtil.getSession();
@@ -27,7 +30,8 @@ public class Crud<Obj> {
 			session.save(obj);
 			transaction.commit();
 		} catch (Exception e) {
-			System.out.print("添加失败");
+			session.getTransaction().rollback();//事务回滚
+			System.out.print(obj.toString()+"添加失败");
 			Tag=false;
 		}
 		HibernateUtil.closeSession();
@@ -77,8 +81,34 @@ public class Crud<Obj> {
 		
 	}
 	
-	public void Delete(Obj obj) {
-		
+	@SuppressWarnings("unchecked")
+	public Boolean Delete(Obj obj) {
+		Boolean Tag=true;//删除成功与否
+		Session session = null;
+
+		try {
+			session=HibernateUtil.getSession();
+			Transaction transaction=session.beginTransaction();
+			Obj NewObj=(Obj) session.get(obj.getClass(),obj.toString());
+			System.err.println(NewObj.toString());
+			
+			session.delete(NewObj);
+			session.flush();
+			transaction.commit();
+		} catch (Exception e) {
+			System.out.print(obj.toString()+"-删除失败");
+			Tag=false;
+		}
+		HibernateUtil.closeSession();
+		return Tag;
 	}
 	
 }
+
+
+
+
+
+
+
+

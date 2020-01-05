@@ -48,12 +48,12 @@
 	
 		<!-- 展示全部可以修改的信息 -->
 		<action name="ChangeRoomInformation_Show" class="com.sjk.action.ChangeRoomInformation_Show" method="execute">
-			<result name="S">/Page/Change/ChangeRoomInformation.jsp</result> 
+			<result name="S" >/Page/Change/ChangeRoomInformation.jsp</result> 
 		</action>
 	
 		<!-- Crud房间 -->
 		<action name="ChangeRoomInformation" class="com.sjk.action.ChangeRoomInformation" method="execute">
-			<result name="S">/Page/Change/ChangeRoomInformation.jsp</result> 
+			<result name="S" type="chain">ChangeRoomInformation_Show</result> 
 		</action>
 	
 	

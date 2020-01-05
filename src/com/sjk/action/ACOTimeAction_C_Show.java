@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import com.opensymphony.xwork2.ActionSupport;
 
 import Dispose.Crud;
-import Dispose.FindCheckInByCID;
+import Dispose.CrudCheckInByCID;
 import Dispose.ShowCheckIn;
 import Dispose.ShowRoom;
 import TableClass.CheckIn;
@@ -38,7 +38,7 @@ public class ACOTimeAction_C_Show extends ActionSupport{
 	
 	private void FindCanRoom() {
 		
-		CheckIn checkIn=FindCheckInByCID.getByCID(this.CID);//获取需要换房的交易流水
+		CheckIn checkIn=CrudCheckInByCID.ReadByCID(this.CID);//获取需要换房的交易流水
 		
 		Room room=new Room();//获取需要换房的原本房间
 		room.setRno(checkIn.getRno());
