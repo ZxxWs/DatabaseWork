@@ -13,7 +13,6 @@ public class RoomUpdate {
  * */
 	
 	public static Boolean ChangeRoomRcondition(Room room) {
-
 		Boolean Tag=true;//添加成功与否,0为成功
 		Session session = null;
 		try {
@@ -28,10 +27,61 @@ public class RoomUpdate {
 			}
 			transaction.commit();
 		} catch (Exception e) {
-			System.out.print("更改失败");
+			System.out.print("Dispose.RoomUpdate.ChangeRoomRcondition-失败");
 			Tag=false;
 		}
 		HibernateUtil.closeSession();
 		return Tag;	
 	} 
+	
+	public static Boolean UpdateAllInformation(String OldRno,String Rtype,double Rprice,int Rcondition,String Pno,String NewRno) {
+		Boolean Tag=true;
+		
+		Session session = null;
+		try {
+			session=HibernateUtil.getSession();
+			Transaction transaction=session.beginTransaction();
+			
+			Room room=(Room) session.get(Room.class,OldRno);
+			room.setRno(NewRno);
+			room.setRtype(Rtype);
+			room.setRprice(Rprice);
+			room.setRcondition(Rcondition);
+			room.setPno(Pno);
+			
+			transaction.commit();
+		} catch (Exception e) {
+			System.out.print("Dispose.RoomUpdate.UpdateAllInformation-失败");
+			Tag=false;
+		}
+		HibernateUtil.closeSession();
+		
+		return Tag;
+	}
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
