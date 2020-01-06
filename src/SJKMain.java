@@ -123,7 +123,7 @@ public class SJKMain {
 
 	
 	private static void c() {
-		
+		Session session=HibernateUtil.getSession();
 	}
 
 	public static void main(String[] args) throws Exception {
