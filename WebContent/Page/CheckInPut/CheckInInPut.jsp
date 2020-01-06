@@ -15,6 +15,7 @@
 	<%
 		String Rno=request.getParameter("Rno");
 		String Rprice=request.getParameter("Rprice");
+		
 		request.setAttribute("Rno",Rno);
 		request.setAttribute("Rprice",Rprice);
 	%>

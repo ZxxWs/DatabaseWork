@@ -37,8 +37,8 @@ public class ACOTimeAction_O extends ActionSupport{
 	
 	//ÍË·¿·½·¨
 	public Boolean Out() {
-		Boolean Tag=new Boolean(true);
 		
+		Boolean Tag=new Boolean(true);
 		CheckIn checkIn=new CheckIn();
 		checkIn.setCID(this.CID);
 		Tag=CheckInUpdate.OutCheckIn(checkIn);
@@ -56,8 +56,6 @@ public class ACOTimeAction_O extends ActionSupport{
 	
 	public void setCID(BigInteger CID) {
 	      this.CID=CID;
-			System.out.println("CID");
-			System.out.print(CID);
 	}
 	
 	public void setCond(int Cond) {

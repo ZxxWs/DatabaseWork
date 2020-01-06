@@ -45,6 +45,7 @@ public class CheckInUpdate {
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
+			
 			CheckIn newcheckIn=(CheckIn) session.get(CheckIn.class,checkIn.getCID());
 			AddTime=newcheckIn.getAllTime()+AddTime;
 			AddMoney=newcheckIn.getAllMoney()+AddMoney;

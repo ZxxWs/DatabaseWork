@@ -13,7 +13,7 @@ public class RoomUpdate {
  * */
 	
 	public static Boolean ChangeRoomRcondition(Room room) {
-		Boolean Tag=true;//添加成功与否,0为成功
+		Boolean Tag=true;//修改成功与否
 		Session session = null;
 		try {
 			session=HibernateUtil.getSession();

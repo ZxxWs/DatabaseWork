@@ -46,8 +46,13 @@
         </s:iterator>
 	</table>
 
-
-
+  	<form id="ADRoom" action="ChangeRoomInformation">
+        <input type="button" value="添加房间" onclick="Add()" />
+        <input type="hidden" name="OldRno" id="OldRno" />
+        <input type="hidden" name="Crud" id="Crud" >
+        <input type="button" value="删除房间" onclick="Del()" />
+    </form>
+	
 	<script type="text/javascript">
 		var  c='<s:property value="IsSuccess"/>';
 		if(c==1){
@@ -57,23 +62,37 @@
 			alert("修改房间信息失败")
 			window.close('/SJK/Page/Change/ChangeRoom.jsp')
 	    }else if(c==-2){
-	    	alert("续房失败")
+	    	alert("删除失败")
+			window.close('/SJK/Page/Change/ChangeRoom.jsp')
 	    }else if(c==2){
-
+	    	alert("删除成功")
+			window.close('/SJK/Page/Change/ChangeRoom.jsp')
 	    }else if(c==-3){
-	    	alert("换房失败")
+	    	alert("添加失败")
+			window.close('/SJK/Page/Change/AddRoom.jsp')
 	    }else if(c==3){
-	    	alert("换房成功")
+	    	alert("添加成功")
+			window.close('/SJK/Page/Change/AddRoom.jsp')
 	    }
 		
 		 function Change(Rno,Rtype,Rprice,Rcondition,Pno){
 			open ('/SJK/Page/Change/ChangeRoom.jsp?Rno='+Rno+'&Rtype='+Rtype+'&Rprice='+Rprice+'&Rcondition='+Rcondition+'&Pno='+Pno, '修改信息' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 		 }
 		 function Add(){
-				open ('/SJK/Page/Change/AddRoom.jsp', '增添房间' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+			open ('/SJK/Page/Change/AddRoom.jsp', '增添房间' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 		 }
 		 function Del(){
-				//open ('/SJK/Page/Change/AddOrDelRoom.jsp', '删除房间' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+			
+			var inPut
+			inPut=prompt("请输入需要删除的房间号","");
+			if(inPut!=null){
+				document.getElementById("OldRno").value=inPut;
+				document.getElementById("Crud").value="D";
+				var Sure=confirm("确定删除")
+				if(Sure==true){
+	            	document.getElementById("ADRoom").submit();
+				}
+			}
 		 }
 
 	</script>

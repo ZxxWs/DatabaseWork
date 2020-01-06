@@ -45,7 +45,7 @@
 	        <input type="hidden" name="CID" id="CID" value='<s:property value="CID"/>'>
 	        <input type="hidden" name="OldRno" id="OldRno" value='<s:property value="OldRno"/>'>
 	        <input type="hidden" name="NewRno" id="NewRno" value="null">
-	         <input type="hidden" name="Page"  value="1">
+	        <input type="hidden" name="Page"  value="1">
     </form>
 	
 	

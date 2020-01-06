@@ -1,9 +1,6 @@
 package com.sjk.action;
 
-import java.util.ArrayList;
-
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.org.apache.regexp.internal.recompile;
 
 import Dispose.Crud;
 import Dispose.RoomUpdate;
@@ -12,8 +9,8 @@ import TableClass.Room;
 public class ChangeRoomInformation extends ActionSupport{
 
 	/**
-	 * 用于展示修改信息的Action
-	 * 包括Crud
+	 * 用于修改信息的Action
+	 * 包括对Room类的Crud（无R）
 	 * 
 	 * 
 	 * */
@@ -26,14 +23,21 @@ public class ChangeRoomInformation extends ActionSupport{
 	private String Pno;
 
 	private String Crud;//操作类型C\U\D
-	private int IsSuccess=0;
+	private int IsSuccess=0;//操作成功与否：1修改成功.-1修改失败	2删除成功.-2删除失败 3添加成功.-3删除失败
 	
 	@Override
 	public String execute() throws Exception {
 
-		System.out.print(this.Crud);
+		System.out.print("this.Crud");
+		System.out.println(this.Crud);
 		if(this.Crud.equals("C")) {
 			Change();
+		}else if (this.Crud.equals("D")) {
+			Delete();
+		}else if (this.Crud.equals("A")) {
+			Add();
+		}else {
+			//??
 		}
 		
 		return "S";
@@ -41,6 +45,7 @@ public class ChangeRoomInformation extends ActionSupport{
 
 	//修改信息
 	private void Change() {
+		//调用房间信息更新的静态方法
 		Boolean t=RoomUpdate.UpdateAllInformation(this.OldRno,this.Rtype,this.Rprice,this.Rcondition,this.Pno, this.NewRno);
 		if(t) {
 			this.IsSuccess=1;
@@ -49,9 +54,31 @@ public class ChangeRoomInformation extends ActionSupport{
 		}
 	}
 	
+	private void Delete() {
+		//使用Crud类删除Room对象
+		Room room=new Room();
+		Crud<Room> crud=new Crud<>();
+		room.setRno(this.OldRno);
+		Boolean t=crud.Delete(room);
+		if(t) {//判断是否删除成功
+			this.IsSuccess=2;
+		}else {
+			this.IsSuccess=-2;
+		}
+	}
 	
+	private void Add() {
+		Room room=new Room(this.NewRno, this.Rtype, this.Rprice, this.Rcondition, this.Pno);
+		Crud<Room> crud=new Crud<>();
+		Boolean t=crud.Create(room);
+		if(t) {//是否添加成功
+			this.IsSuccess=3;
+		}else {
+			this.IsSuccess=-3;
+		}
+		
 	
-	
+	}
 	
 	/***********************下面是set方法*****************************/
 	public void setOldRno(String OldRno) {

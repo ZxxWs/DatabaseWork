@@ -33,7 +33,6 @@
 	        
 			<s:iterator value="ACOTimeList" ><!-- 表格的填充 -->
 	        	<tr>
-	        	
 	        	   <td><s:property value="CID"/></td>
 	                <td><s:property value="Gno"/></td>
 	                <td><s:property value="Gno1"/></td>
@@ -69,7 +68,6 @@
 		                </s:else>
 		             		</td>
 	             </tr>
-	        
 	        </s:iterator>	
     	</table>
     	

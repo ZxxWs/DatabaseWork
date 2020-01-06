@@ -16,7 +16,6 @@
 		String Rcondition=request.getParameter("Rcondition");
 		String Pno=request.getParameter("Pno");
 	
-		out.print(Pno);
 	%>
 
 	<!-- 修改房间信息 -->

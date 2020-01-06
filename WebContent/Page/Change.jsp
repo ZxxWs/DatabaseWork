@@ -14,6 +14,9 @@
         <input type="submit" value="修改房间信息"/>
     </form>
 
+ 	<form action="ChangePrincipalInformation_Show">
+        <input type="submit" value="修改员工信息"/>
+    </form>
 
 
 </body>

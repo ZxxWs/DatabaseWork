@@ -78,8 +78,8 @@ public class Crud<Obj> {
 	}
 	
 	public void Update(Obj obj) {
-		
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public Boolean Delete(Obj obj) {
@@ -89,11 +89,11 @@ public class Crud<Obj> {
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
-			Obj NewObj=(Obj) session.get(obj.getClass(),obj.toString());
-			System.err.println(NewObj.toString());
-			
-			session.delete(NewObj);
-			session.flush();
+			Obj NewObj=(Obj) session.load(obj.getClass(),obj.toString());
+			if(NewObj!=null) {
+				session.delete(NewObj);
+				session.flush();
+			}
 			transaction.commit();
 		} catch (Exception e) {
 			System.out.print(obj.toString()+"-É¾³ýÊ§°Ü");

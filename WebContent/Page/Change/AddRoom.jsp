@@ -9,15 +9,25 @@
 </head>
 <body>
 
-	<s:form action="ChangeRoomInformation"><!-- 添加房间表单 -->
-		<s:textarea name="NewRno" ></s:textarea>
-		<s:textarea name="Rprice" ></s:textarea>
-		<s:select list="#{0:'单人间',1:'双人间',2:'单人钟点房',3:'双人钟点房'}" name="Rtype" ></s:select>
-		<s:select list="#{0:'空房',1:'房间有人'}" name="Rcondition"></s:select>
-		<s:hidden name="Crud" value="A"></s:hidden><!-- 用于标记是Crud中的哪个 -->
-	    <s:submit value="确认修改"/><!-- 默认type="input" -->
-	</s:form>
+	
 
+	<form action="ChangeRoomInformation" id="ChangeRoomFrom" target="_blank">
+                 房间号<input type="text" name="NewRno" /><br>
+                 房间类型<select name="Rtype" id="RtypeSelect" >
+			<option value="单人间">单人间</option>
+			<option value="双人间">双人间</option>
+			<option value="单人钟点房">单人钟点房</option>
+			<option value="双人钟点房">双人钟点房</option>
+		</select><br>
+                 房间价格<input type="text" name="Rprice" /><br>
+                 房间状态：<select name="Rcondition" id="RconditionSelect">
+			<option value="0">空房</option>
+			<option value="1">有人</option>
+		</select>	<br>
+                 管理员工号：<input type="text" name="Pno" /><br>
+        <input type="hidden" name="Crud" value='A'/>
+        <input type="submit" value="确认添加"/> <br>
+    </form>
 
 </body>
 </html>

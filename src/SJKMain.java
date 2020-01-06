@@ -2,6 +2,9 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import com.mysql.jdbc.StringUtils;
 import com.sjk.action.ChangeRoomInformation_Show;
 import com.sun.swing.internal.plaf.basic.resources.basic;
@@ -9,6 +12,7 @@ import com.sun.swing.internal.plaf.basic.resources.basic;
 import Dispose.CheckInUpdate;
 import Dispose.Crud;
 import Dispose.CrudCheckInByCID;
+import Dispose.HibernateUtil;
 import Dispose.RoomUpdate;
 import TableClass.CheckIn;
 import TableClass.Guest;
@@ -61,12 +65,16 @@ public class SJKMain {
 	
 	private static void b() {
 		
-//		CheckIn checkIn=new CheckIn();
-//		
+/**		CheckIn checkIn=new CheckIn();
+//		checkIn.setCID(new BigInteger("10000000000000000065"));
 		
 //		Crud<CheckIn> crud=new Crud<>();
+//		Crud<Room> crud2=new Crud<>();
+//		Room room=new Room();
+//		room.setRno("111");
+//		crud2.Delete(room);
 //		crud.Delete(checkIn);
-		
+//		crud.Delete(checkIn);
 //		crud.Read(checkIn,"");
 //		CheckInUpdate.OutCheckIn(checkIn);
 //		FindCheckInByCID.getByCID(checkIn.getCID());
@@ -76,22 +84,52 @@ public class SJKMain {
 //		String HQL="from Room where Rcondition=0 and Rtype='单人间'";//查询可以换的房间
 //		crud.Read(room, HQL);
 //		this.CanRoomList=rooms;
-		
-		
-		
-		if(CrudCheckInByCID.DeleteByCID(new BigInteger("10000000000000000065"))) {
-			System.out.print("\n\n\nasasa\n\n\n");
-		};
+//		if(CrudCheckInByCID.DeleteByCID(new BigInteger("10000000000000000065"))) {
+//			System.out.print("\n\n\nasasa\n\n\n");
+//		}
 //		Crud<Principal> crud=new Crud<>();
 //		Principal principal=new Principal();
 //		principal.setPno("004");
 //		crud.Delete(principal);
+//		Room room=new Room();
+//		room.setRno("004");
+//		Principal principal=new Principal();
+//		principal.setPno("004");
+//		
+//		Session session = null;
+//
+//		try {
+//			session=HibernateUtil.getSession();
+//			Transaction transaction=session.beginTransaction();
+////			Obj NewObj=(Obj) session.get(obj.getClass(),obj.toString());
+////			Room room2=(Room) session.get(Room.class,room.getRno());
+//			Principal principal2=(Principal) session.get(Principal.class,principal.getPno());
+////			System.err.println(NewObj.toString());
+//			if(principal2!=null) {
+//
+//				session.delete(principal2);
+//				session.flush();
+//			}
+//			transaction.commit();
+//		} catch (Exception e) {
+//			System.out.print(principal.toString()+"-删除失败\n");
+//			e.printStackTrace();
+////			Tag=false;
+//		}
+//		HibernateUtil.closeSession();
+//		
+		*/
 	}
 
+	
+	private static void c() {
+		
+	}
 
 	public static void main(String[] args) throws Exception {
 		a();
 		b();
+		c();
 	}
 	
 

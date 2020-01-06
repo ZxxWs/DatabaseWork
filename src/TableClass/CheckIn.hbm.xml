@@ -7,7 +7,7 @@
         <id name="CID" type="java.math.BigInteger">
             <column name="CID" />
             <generator class="identity" />
-        </id>
+        </id> 
         
         <property name="Gno" type="java.lang.String">
             <column name="GNO" />
