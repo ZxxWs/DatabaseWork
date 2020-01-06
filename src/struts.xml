@@ -45,7 +45,7 @@
 		<action name="FindInformationAction" class="com.sjk.action.FindInformationAction" method="execute">
 			<result name="S">/Page/FindInformation.jsp</result> 
 		</action>
-	
+<!-- ******************************下面是修改信息功能****************************** -->	
 		<!-- 展示全部可以修改的房间信息 -->
 		<action name="ChangeRoomInformation_Show" class="com.sjk.action.ChangeRoomInformation_Show" method="execute">
 			<result name="S" >/Page/Change/ChangeRoomInformation.jsp</result> 
@@ -54,10 +54,28 @@
 		<!-- Crud房间 -->
 		<action name="ChangeRoomInformation" class="com.sjk.action.ChangeRoomInformation" method="execute">
 			 <result name="S" type="chain">ChangeRoomInformation_Show</result> 
-			<!-- <result name="S" >/Page/Change/ChangeRoomInformation.jsp</result> -->
 		</action>
 	
+		<!-- 展示全部可以修改的员工信息 -->
+		<action name="ChangePrincipalInformation_Show" class="com.sjk.action.ChangePrincipalInformation_Show" method="execute">
+			<result name="S" >/Page/Change/ChangePrincipalInformation.jsp</result> 
+		</action>
 	
+		<!-- Crud员工 -->
+		<action name="ChangePrincipalInformation" class="com.sjk.action.ChangePrincipalInformation" method="execute">
+			 <result name="S" type="chain">ChangePrincipalInformation_Show</result> 
+		</action>
+	
+		<!-- 展示全部可以修改的顾客信息 -->
+		<action name="ChangeGuestInformation_Show" class="com.sjk.action.ChangeGuestInformation_Show" method="execute">
+			<result name="S" >/Page/Change/ChangePrincipalInformation.jsp</result> 
+		</action>
+	
+		<!-- Crud顾客-->
+		<action name="ChangeGuestInformation" class="com.sjk.action.ChangeGuestInformation" method="execute">
+			 <result name="S" type="chain">ChangeGuestInformation_Show</result> 
+		</action>
+<!-- *********************************上面是修改信息功能******************************** -->	
 	
 		<!-- 页面选择按钮 -->
 		<action name="SelectPage" class="com.sjk.action.SelectPage" method="execute">

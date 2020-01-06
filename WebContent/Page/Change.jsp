@@ -17,6 +17,10 @@
  	<form action="ChangePrincipalInformation_Show">
         <input type="submit" value="修改员工信息"/>
     </form>
+    
+	<form action="ChangeGuestInformation_Show">
+        <input type="submit" value="修改顾客信息"/>
+    </form>
 
 
 </body>

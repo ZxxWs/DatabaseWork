@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+	
 	<%//获取需要Crud的房间的信息
 		String Crud=request.getParameter("Crud");
 		String Rno=request.getParameter("Rno");
@@ -42,7 +44,7 @@
 	<!-- 删除此房间 -->
 	 <form action="ChangeRoomInformation" id="DelRoomFrom">
         <input type="hidden" name="Crud" value='D'/><br>
-        <input type="hidden" name="OldRno" value='<%=request.getParameter("Rno")%>'/><br>
+        <input type="hidden" name="OldRno" value='<%=Rno%>'/><br>
         <input type="button" value="删除此房间" onclick="DelRoom()" /><br>
 	 </form>
 
