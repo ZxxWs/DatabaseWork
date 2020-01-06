@@ -70,7 +70,7 @@
 	
 		<!-- 展示全部可以修改的顾客信息 -->
 		<action name="ChangeGuestInformation_Show" class="com.sjk.action.ChangeGuestInformation_Show" method="execute">
-			<result name="S" >/Page/Change/ChangePrincipalInformation.jsp</result> 
+			<result name="S" >/Page/Change/ChangeGuestInformation.jsp</result> 
 		</action>
 	
 		<!-- Crud顾客-->
