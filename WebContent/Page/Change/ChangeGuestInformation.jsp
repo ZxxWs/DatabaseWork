@@ -45,7 +45,7 @@
 			window.close('/SJK/Page/Change/ChangeGuest.jsp')
 	    }
 		 function Change(Gno,Gname,Gtel){
-			open ('/SJK/Page/Change/ChangeGuest.jsp?Gno='+Gno+'&Gname='+Gname+'&Gtel'+Gtel, '修改信息' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+			open ('/SJK/Page/Change/ChangeGuest.jsp?Gno='+Gno+'&Gname='+Gname+'&Gtel='+Gtel, '修改信息' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 		 }
 		
 	</script>

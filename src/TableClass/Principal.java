@@ -17,7 +17,6 @@ public class Principal {
 	
 	private String Pno;
 	private String Pname;
-	private String N;//”√”⁄Hibernate
 	
 	public Principal() {
 	}
@@ -25,15 +24,11 @@ public class Principal {
 	public Principal(String Pno,String Pname) {
 		this.Pno=Pno;
 		this.Pname=Pname;
-
-		this.N=Pno;
 	}
 	
 	
 	public void setPno(String Pno) {
 		this.Pno=Pno;
-
-		this.N=Pno;
 	}
 	
 	public void setPname(String Pname) {
@@ -51,6 +46,6 @@ public class Principal {
 
 	@Override
 	public String toString() {
-		return N;
+		return this.Pno;
 	}
 }

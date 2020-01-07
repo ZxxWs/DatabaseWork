@@ -19,6 +19,7 @@
         <mapping resource="TableClass/Guest.hbm.xml"/>
         <mapping resource="TableClass/CheckIn.hbm.xml"/>
         <mapping resource="TableClass/Principal.hbm.xml"/>
+        <mapping resource="TableClass/Password.hbm.xml"/>
          
     </session-factory>
 </hibernate-configuration>

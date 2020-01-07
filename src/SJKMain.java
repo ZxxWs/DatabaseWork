@@ -123,7 +123,8 @@ public class SJKMain {
 
 	
 	private static void c() {
-		Session session=HibernateUtil.getSession();
+//		Session session=HibernateUtil.getSession();
+		Boolean Tag=Dispose.Login.IsTure("123");
 	}
 
 	public static void main(String[] args) throws Exception {

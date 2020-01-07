@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<style type="text/css">
-        * {
+ * {
             margin: 0;
             padding: 0;
         }
-        /*å»æ‰é¡µé¢æ ·å¼*/
+        /*È¥µôÒ³ÃæÑùÊ½*/
         
         body {
             color: white;
@@ -16,36 +11,36 @@
         .content {
             background-color: pink;
             position: absolute;
-            /*ç»å¯¹å®šä½*/
+            /*¾ø¶Ô¶¨Î»*/
             top: 50%;
             left: 0;
             width: 100%;
             height: 400px;
             margin-top: -200px;
             overflow: hidden;
-            /*éšè—æ»šåŠ¨æ¡*/
+            /*Òş²Ø¹ö¶¯Ìõ*/
         }
         
         .main {
             text-align: center;
-            /*æ–‡æœ¬å±…ä¸­*/
+            /*ÎÄ±¾¾ÓÖĞ*/
             max-width: 600px;
             height: 400px;
             padding: 100px 0px;
-            /*ä¸Šä¸‹80px,å·¦å³ä¸º0*/
+            /*ÉÏÏÂ80px,×óÓÒÎª0*/
             /*background:yellow;*/
-            /*éªŒè¯divçš„ä½ç½®*/
+            /*ÑéÖ¤divµÄÎ»ÖÃ*/
             margin: 0 auto;
-            /*è®¾ç½®ä¸Šå³ä¸‹å·¦,å±…ä¸­æ˜¾ç¤º*/
+            /*ÉèÖÃÉÏÓÒÏÂ×ó,¾ÓÖĞÏÔÊ¾*/
         }
         
         .main h1 {
-            font-family: "åæ–‡è¡Œæ¥·";
-            /*è®¾ç½®å­—ä½“*/
+            font-family: "»ªÎÄĞĞ¿¬";
+            /*ÉèÖÃ×ÖÌå*/
             font-size: 65px;
-            /*è®¾ç½®å­—ä½“å¤§å°*/
+            /*ÉèÖÃ×ÖÌå´óĞ¡*/
             font-weight: 2px;
-            /*è°ƒæ•´å­—ä½“ç²—ç»†*/
+            /*µ÷Õû×ÖÌå´ÖÏ¸*/
         }
         
         form {
@@ -56,11 +51,11 @@
             border: 1px solid white;
             display: block;
             margin: 0px auto 10px auto;
-            /*ä¸Š å³  ä¸‹ å·¦*/
+            /*ÉÏ ÓÒ  ÏÂ ×ó*/
             padding: 10px;
             width: 220px;
             border-radius: 30px;
-            /*H5è®¾ç½®åœ†è§’è¾¹æ¡†*/
+            /*H5ÉèÖÃÔ²½Ç±ß¿ò*/
             font-size: 18px;
             font-weight: 300;
             text-align: center;
@@ -79,24 +74,3 @@
         form button:hover {
             background-color: red;
         }
-    </style>
-
-    <meta charset="UTF-8">
-    <title>ç™»é™†</title>
-</head>
-
-
-
-<body>
-    <div class="content" >
-        <div class="main">
-            <h1>æ¬¢è¿è¿›å…¥é‡‘æºå¤§é…’åº—</h1>
-            <form name="Login" action="login" method="POST">
-                <input type="password" name="password" placeholder="è¯·è¾“å…¥å¯†ç ">
-                <button type="submit">ç™»&nbsp;&nbsp;å½•</button>
-            </form>
-        </div>
-    </div>
-</body>
-
-</html>

@@ -64,7 +64,7 @@ public class CheckInInPutAction extends ActionSupport{
 		//用于记录添加更改是否成功
 		Boolean Tag=new Boolean(true);
 		
-		int IntSex=this.Gno.charAt(16);
+		int IntSex=Integer.valueOf(this.Gno.charAt(16));
 
 		String Sex="";
 		{//性别判断
@@ -91,7 +91,7 @@ public class CheckInInPutAction extends ActionSupport{
 			
 		}else {//双人类型房间的数据库插入
 			
-			int IntSex1=this.Gno1.charAt(16);
+			int IntSex1=Integer.valueOf(this.Gno1.charAt(16));
 			String Sex1="";
 			if(IntSex1%2!=0) {
 				Sex1="男";
@@ -111,7 +111,6 @@ public class CheckInInPutAction extends ActionSupport{
 			room.setRno(this.Rno);
 			Tag=RoomUpdate.ChangeRoomRcondition(room);
 		}
-	
 		return Tag;//向数据库中添加数据。并返回是否成功
 	}
 	

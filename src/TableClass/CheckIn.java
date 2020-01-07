@@ -28,7 +28,6 @@ public class CheckIn {
 	private String ChangeNo;
 	private Date ChangeTime;
 	
-	private BigInteger N;//用于Hibernate的主键查询
 	
 	public CheckIn() {
 
@@ -53,7 +52,6 @@ public class CheckIn {
 	
 	public void setCID(BigInteger CID) {
 		this.CID=CID;
-		this.N=CID;
 	}
 	
 	public void setGno(String Gno) {
@@ -134,7 +132,7 @@ public class CheckIn {
 	}
 	@Override
 	public String toString() {
-		return String.valueOf(this.N);
+		return String.valueOf(this.CID);
 	}
 	
 }
