@@ -17,7 +17,7 @@ public class Crud<Obj> {
  * C：create
  * R：read
  * U：update--未写
- * D：delete--未写
+ * D：delete
  * 
  * */
 	
@@ -41,7 +41,7 @@ public class Crud<Obj> {
 	/**
 	 * 查询方法。两个参数：一个表的对象，一个String语句
 	 * 当String不空时，通过HQL语句查询
-	 * 当String为空时，通过Obj对象查询整个表
+	 * 当String为空时，通过Obj对象（主键为空）查询整个表
 	 * 								  或者通过对象主键查询某个对象
 	 * */
 	@SuppressWarnings("unchecked")

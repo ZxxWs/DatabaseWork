@@ -7,20 +7,20 @@
 <title>客房管理系统</title>
    <link href="/SJK/Page/Css/Css.css" type="text/css" rel="stylesheet" />
     <!-- CSS样式控制 -->
- 
 </head>
 <body>
+<body class="body">
 
-	<div id="ShowMenu">
-	       <ul id=menu>
-	           <li><a href="#" id="1" > 入住登记</a> </li>
-	           <li><a href="#" id="2"> 换、退、续房</a> </li>
-	           <li><a href="#" id="3"> 信息查询</a> </li>
-	           <li><a href="#" id="4"> 信息修改</a></li>
-	           <li><a href="#" id="5"> 退出</a> </li>
-	       </ul>
-	</div>
-
+    <div>
+        <ul class="lebt">
+            <li><a href="#" id="1">入住登记</a> </li>
+            <li><a href="#" id="2">换、退、续房</a> </li>
+            <li><a href="#" id="3">信息查询</a> </li>
+            <li><a href="#" id="4">信息修改</a></li>
+            <li><a href="#" id="5">退出</a> </li>
+        </ul>
+    </div>
+<div class="lebtt">
  	<form id="SelectPage" action="SelectPage"  target="_parent">
         <!-- 隐藏表单用于传参-->
         <input type="hidden" name="Page" id="Page" value="null">
@@ -29,10 +29,9 @@
   
 	<script>
         OnClickLi();
-
         // 菜单选择函数，根据点击的菜单来显示页面
         function OnClickLi() {
-
+            
             var oli = document.getElementsByTagName("li");
             for (var i = 0; i < oli.length; i++) {
                 
@@ -56,10 +55,9 @@
                 	document.getElementById("Page").value="4";
                 	document.getElementById("SelectPage").submit();
                 };
-                
             }
         }
     </script>
-
+</div>
 </body>
 </html>

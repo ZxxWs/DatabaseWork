@@ -102,7 +102,7 @@ body span {
 .table_content table th {
     height: 60px;
     text-align: center;
-    font-size: 30px;
+    font-size: 23px;
     border-right: 2px dashed #FFF0F5;
     border-bottom: 2px dashed #FFF0F5;
     border-collapse: collapse;
@@ -112,7 +112,7 @@ body span {
 
 
 .table_content table td {
-    width: 20%;
+    width: 10%;
     height: 45px;
     font-size: 20px;
     max-width: 300px;

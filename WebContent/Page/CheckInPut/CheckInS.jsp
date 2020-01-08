@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="/SJK/Page/Css/Css3.css" type="text/css" rel="stylesheet" />
 <title>入住成功</title>
 </head>
-<body>
-入住成功
-<br>
-共 <s:property value="AllMoney"/> 元
-流水号：<s:property value="CID"/>
+<body class="body">
+	入住成功
+	<br>
+	共 <s:property value="AllMoney"/> 元
+	流水号：<s:property value="CID"/>
 </body>
 </html>

@@ -14,6 +14,11 @@ public class CheckInUpdate {
  * 		OutCheckIn-退房处理-添加退房时间
  * 		AddTimeCheckIn-续房功能-修改入住时间
  * 		ChangeRoomCheckIn-退房功能-修改房间的退房时间和BackNo
+ * 
+ * 
+ * By:Zxx
+ * 
+ * 
  * */
 	
 	

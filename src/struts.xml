@@ -18,7 +18,7 @@
 		<!-- 入住信息登记界面成功与否 -->
 		<action name="CheckInAction" class="com.sjk.action.CheckInInPutAction" method="execute">
 			<result name="F" >/Page/CheckInPut/CheckInF.jsp</result>
-			<result name="S" type="redirect">/Page/CheckInPut/CheckInS.jsp</result>
+			<result name="S" >/Page/CheckInPut/CheckInS.jsp</result>
 		</action>
 		
 		<!-- 退房功能 -->

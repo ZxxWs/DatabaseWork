@@ -31,6 +31,7 @@ public class ShowCheckIn {
 		this.CheckInList=crud.Read(checkIn,HQL);
 
 		getOutTime gTime=new getOutTime();
+		
 		for(CheckIn c:this.CheckInList) {
 			Date d=gTime.toTime(c);
 			c.setOutTime(d);

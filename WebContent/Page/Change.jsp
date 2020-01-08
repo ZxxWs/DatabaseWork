@@ -6,21 +6,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <link href="/SJK/Page/Css/Css2.css" type="text/css" rel="stylesheet" />
 <title>信息修改</title>
+    <style>
+        form input {
+            background-color: #afa9e7;
+            border-radius: 10px;
+            border: 0;
+            height: 50px;
+            width: 400px;
+            padding: 5px 10px;
+            margin-left: 50px;
+            margin-top: 50px;
+            font-size: 25px;
+            color: white;
+        }
+        
+        form input:hover {
+            background-color: rgb(225, 236, 126);
+        }
+    </style>
 </head>
-<body>
-<iframe id="ShowPag" name="ShowPag" src="/SJK/Page/Menu.jsp" noresize="noresize"></iframe>
-  
-    <form action="ChangeRoomInformation_Show">
-        <input type="submit" value="修改房间信息"/>
-    </form>
+<body id="body">
+    <iframe id="ShowPag" name="ShowPag" src="Menu.jsp" noresize="noresize"></iframe>
 
- 	<form action="ChangePrincipalInformation_Show">
-        <input type="submit" value="修改员工信息"/>
-    </form>
-    
-	<form action="ChangeGuestInformation_Show">
-        <input type="submit" value="修改顾客信息"/>
-    </form>
+    <div class="ddd">
+        <form action="ChangeRoomInformation_Show">
+            <input type="submit" value="修&nbsp;改&nbsp;房&nbsp;间&nbsp;信&nbsp;息"></input>
+        </form>
+
+        <form action="ChangePrincipalInformation_Show">
+            <input type="submit" value="修&nbsp;改&nbsp;员&nbsp;工&nbsp;信&nbsp;息"></input>
+        </form>
+
+        <form action="ChangeGuestInformation_Show">
+            <input type="submit" value="修&nbsp;改&nbsp;顾&nbsp;客&nbsp;信&nbsp;息"></input>
+        </form>
+    </div>
 
 
 </body>

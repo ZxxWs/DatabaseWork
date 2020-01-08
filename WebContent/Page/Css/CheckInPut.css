@@ -1,0 +1,79 @@
+
+.content {
+	background-color: pink;
+	position: absolute;
+	/*绝对定位*/
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 540px;
+	margin-top: -300px;
+	overflow: hidden;
+}
+
+.main {
+	text-align: center;
+	max-width: 300px;
+	height: 400px;
+	padding: 100px 0px;
+	margin: 0 auto;
+}
+
+.main h1 {
+	font-family: "黑体";
+	font-size: 65px;
+	font-weight: 2px;
+}
+
+form {
+	padding: 20px 0;
+}
+
+form input {
+	border: 1px solid white;
+	display: block;
+	margin: 0px auto 10px auto;
+	/*上 右  下 左*/
+	padding: 10px;
+	width: 100px;
+	border-radius: 30px;
+	font-size: 15px;
+	font-weight: 100;
+	text-align: center;
+}
+
+form input:hover {
+	background-color: pink;
+}
+
+form button {
+	background-color: yellow;
+	border-radius: 10px;
+	border: 0;
+	height: 18px;
+	width: 200px;
+	padding: 5px 5px;
+}
+
+form button:hover {
+	background-color: chartreuse;
+}
+
+select {
+	appearance: none; //
+	-webkit-appearance: none; //
+	padding-right: 14px; //
+	width: 20px;
+	height: 25px;
+	border: 1px solid #ccc;
+	font-size: 15px;
+	background-color: yellow;
+	color: black;
+}
+textarea{
+width:300px;
+heigh:300px;
+background:white;
+font-size:20px;
+left:200px;
+}

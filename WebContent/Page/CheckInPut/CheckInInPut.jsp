@@ -4,37 +4,45 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link href="/SJK/Page/Css/Css4.css" type="text/css" rel="stylesheet" />
+  <link href="/SJK/Page/Css/CheckInPut.css" type="text/css" rel="stylesheet" />
+  
 <title>输入入住信息</title>
+
 <!-- 单人间输入界面 -->
 </head>
-<body>
-输入入住信息
-
+<body id="body">
+<h1>输入入住信息</h1>
 
 
 	<%
 		String Rno=request.getParameter("Rno");
 		String Rprice=request.getParameter("Rprice");
-		
-		request.setAttribute("Rno",Rno);
-		request.setAttribute("Rprice",Rprice);
 	%>
 
-
-	<s:form action="CheckInAction"><!-- 入住信息表单 -->
-	
-		<s:textarea name="Gname" value="姓名："></s:textarea>
-		<s:textarea name="Gno" value="身份证号"></s:textarea>
-		<s:textarea name="Gtel" value="电话："></s:textarea>
-		<s:select  name="AllTime" list="#{1:'1天',2:'2天',3:'3天',4:'4天',5:'5天',6:'6天',7:'7天',8:'8天',9:'9天' }"></s:select>
-		
-		<s:hidden name="Rno" value="%{#request.Rno}"></s:hidden>
-		<s:hidden name="Rprice" value="%{#request.Rprice}"></s:hidden>
-		<s:hidden name="Rtype" value="1"></s:hidden>
-		<s:hidden value="0" name="Page"></s:hidden><!-- 用于页面重定向的 -->
-	    <s:submit value="入住"/><!-- 默认type="input" -->
-	    
-	</s:form>
+    <form action="CheckInAction">
+	        顾客姓名<input type="text" name="Gname" />
+	        顾客身份证号<input type="text" name="Gno" />
+	        顾客手机号<input type="text" name="Gtel" />
+		<select name="AllTime">
+			<option value="1">1天</option>
+			<option value="2">2天</option>
+			<option value="3">3天</option>
+			<option value="4">4天</option>
+			<option value="5">5天</option>
+			<option value="6">6天</option>
+			<option value="7">7天</option>
+			<option value="8">8天</option>
+			<option value="9">9天</option>
+			<option value="10">10天</option>
+		</select>
+        <input type="hidden" name="Rno" value="<%=Rno%>" />
+        <input type="hidden" name="Rprice" value="<%=Rprice%>" />
+        <input type="hidden" name="Rtype" value="1" />
+        <input type="hidden" name="Page" value="1" />
+        <input type="submit" value="入住" />
+    </form>
 
 </body>
 

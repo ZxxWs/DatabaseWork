@@ -1,44 +1,129 @@
+iframe {
+    top: 0px;
+    height: 100px;
+    width: 80%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+    font-size: 14px;
+    color: white;
+    width: 80%;
+    margin: 60px auto;
+    background: url("/33.jpg")no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.lebt {
+    padding: 1px 10px 5px;
+    font-weight: normal;
+    font-size: 20px;
+    color: palevioletred;
+}
+
+.lebtt {
+    padding: 10px 10px 5px;
+    font-weight: normal;
+    font-size: 20px;
+    color: white;
+}
+
 div {
     height: 50px;
-    /* border-bottom: 1px solid#000; */
 }
 
 div ul li {
     float: left;
     list-style: none;
 }
-
+ 
 div ul li a {
-    color: #969996;
+    color: white;
+    font-size: 25px;
+    padding: 10px 15px;
+    background-color: palevioletred;
     text-decoration: none;
-    padding: 0 34px;
-    background: #f7f7f7;
-    display: block;
-    height: 35px;
+    /* display: block; */
+    height: 180px;
     line-height: 35px;
-    border: 1px solid #969996;
-    margin-left: 19px;
+    border: 1px solid palevioletred;
     border-bottom: none;
-    margin-top: 14px;
+    margin-left: 10px;
+    margin-top: 13px;
 }
 
 div ul li a:hover {
-    border: #000;
-    background: rgb(93, 92, 95);
-    color: #e2cdcd;
+    /* 榧犳爣绉诲姩鍒癮涓婃妗嗙殑鍙樿姳鏍峰紡 */
+    border: white;
+    background: white;
+    color: palevioletred;
     height: 40px;
-    margin-top: 10px;
-}
-
-div ul li a:active {
-    background: rgb(93, 92, 95);
-    color: #e2cdcd;
+    margin-top: 50px;
 }
 
 
+/* div ul li a:active {
+        background: rgb(93, 92, 95);
+        color: #e2cdcd;
+    } */
 
+table {
+    float: left;
+    list-style: none;
+    width: 80%;
+    border-spacing: 3px;
+    /*鍗曞厓鏍艰竟妗嗛棿璺濅负1*/
+    box-shadow: 0 1px 1px #ccc;
+}
+
+table tr th {
+    background-color: rgb(144, 228, 137);
+    width: 600px;
+    height: 15px;
+    /*琛ㄦ牸涓唴瀹硅鐨勫搴�*/
+    border-right: solid #ccc 1px;
+    /*璁剧疆琛ㄦ牸鍗曞厓鏍煎杈规锛屽彧璁剧疆鍙充笅杈规*/
+    border-bottom: solid #ccc 1px;
+    padding: 1px 10px;
+    /*璁剧疆鍗曞厓鏍煎唴杈硅窛锛屽崟鍏冩牸鍐呭鏄惧緱涓嶆嫢鎸�*/
+    text-align: center;
+    /*鍗曞厓鏍煎唴瀹瑰眳涓�*/
+}
+
+table tr td {
+    background-color: rgb(90, 145, 247);
+    width: 600px;
+    height: 15px;
+    /*琛ㄦ牸涓唴瀹硅鐨勫搴�*/
+    border-right: solid #ccc 1px;
+    /*璁剧疆琛ㄦ牸鍗曞厓鏍煎杈规锛屽彧璁剧疆鍙充笅杈规*/
+    border-bottom: solid #ccc 1px;
+    padding: 1px 10px;
+    /*璁剧疆鍗曞厓鏍煎唴杈硅窛锛屽崟鍏冩牸鍐呭鏄惧緱涓嶆嫢鎸�*/
+    text-align: center;
+    /*鍗曞厓鏍煎唴瀹瑰眳涓�*/
+}
+
+table tr td b {
+    color: white;
+    font-family: 鍗庢枃琛屾シ;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 34px;
+    display: block;
+    height: 1px;
+    /*鍗曞厓鏍煎搴�*/
+    margin-left: 15px;
+    /*鍗曞厓鏍奸暱搴�*/
+    border-bottom: none;
+    margin-top: 13px;
+}

@@ -18,7 +18,8 @@ iframe {
     width: 80%;
     margin: 50px auto;
     text-align: center;
-    background: url("/33.jpg")no-repeat;
+    background: url(/33.jpg)no-repeat;
+    background-color:pink;
     overflow: hidden;
     background-size: cover;
     font-size: 20px;
@@ -64,8 +65,6 @@ body span {
     float: left;
 }
 
-
-
 .table_content table th:nth-child(even) {
     background-color: #d1e2a2;
 }
@@ -90,14 +89,9 @@ body span {
     font-size: 100px;
 }
 
-
-
 .table_content table tr:hover {
     background-color: #8de9cd;
 }
-
-
-
 
 .table_content table th {
     height: 60px;
@@ -108,16 +102,12 @@ body span {
     border-collapse: collapse;
 }
 
-
-
-
 .table_content table td {
     width: 20%;
     height: 45px;
     font-size: 20px;
     max-width: 300px;
     text-align: center;
-
     word-wrap: break-word;
     vertical-align: middle;
     border-right: 2px dashed #FFF0F5;

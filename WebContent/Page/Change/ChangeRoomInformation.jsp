@@ -5,18 +5,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <link href="/SJK/Page/Css/Css4.css" type="text/css" rel="stylesheet" />
 <title>修改酒店房间信息</title>
 </head>
-<body>
+<body id="body">
 	
     <form action="ChangeRoomInformation_Show">
     	输入房间号：<input type="text" name="FindNo">
         <input type="submit" value="查询"/>
     </form>
+      	<form id="ADRoom" action="ChangeRoomInformation">
+        <input type="button" value="添加房间" onclick="Add()" />
+        <input type="hidden" name="OldRno" id="OldRno" />
+        <input type="hidden" name="Crud" id="Crud" >
+        <input type="button" value="删除房间" onclick="Del()" />
+    </form>
 	
-	<table border="1" ><!-- 房记录表  -->
-						
-		<tr>
+		<div class="table_div">
+		<div class="center_center">
+			<div class="table_content">
+				<table cellspacing="0px" cellpadding="0px">
+					<thead>
+						<tr>
 			<th>房间号</th>
 			<th>类型</th>
 			<th>价格</th>
@@ -24,7 +34,10 @@
 			<th>负责人工号</th>
 			<th>修改</th>
 		</tr>
-		<s:iterator value="ShowRoomList" >
+					</thead>
+					<tbody>
+						<tr>
+					<s:iterator value="ShowRoomList" >
         	<tr>
                 <td><s:property value="Rno"/></td>
                 <td><s:property value="Rtype"/></td>
@@ -44,15 +57,16 @@
                 <td><input class="btn" name="edit" type="button" value="修改信息" onclick="Change('<s:property value="Rno"/>','<s:property value="Rtype"/>','<s:property value="Rprice"/>','<s:property value="Rcondition"/>','<s:property value="Pno"/>')"></td>
 	        </tr>
         </s:iterator>
-	</table>
 
-  	<form id="ADRoom" action="ChangeRoomInformation">
-        <input type="button" value="添加房间" onclick="Add()" />
-        <input type="hidden" name="OldRno" id="OldRno" />
-        <input type="hidden" name="Crud" id="Crud" >
-        <input type="button" value="删除房间" onclick="Del()" />
-    </form>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
 	
+
 	<script type="text/javascript">
 		var  c='<s:property value="IsSuccess"/>';
 		if(c==1){

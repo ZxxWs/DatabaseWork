@@ -9,24 +9,25 @@
  
 <title>入住</title>
 </head>
-<body>
+<body id="body">
    <iframe id="ShowPag" name="ShowPag" src="/SJK/Page/Menu.jsp" noresize="noresize"></iframe>
     <!-- frameBorder=0 -->
-    
-        <table id="ShowTable" border="1" cellspacing="0" cellpadding="0">
-	       <thead>
-		        <tr>
-		            <th>房号</th>
-		            <th>类型</th>
-		            <th>价格</th>
-		            <th>负责人</th>
-		            <th>开房</th>
-		        </tr>
-	        </thead>
-	        
-	        	
-	        	
-	        <s:iterator value="RoomList" >
+    <div class="table_div">
+        <div class="center_center">
+            <div class="table_content">
+                <table cellspacing="0px" cellpadding="0px">
+                    <thead>
+                        <tr>
+                            <th>房号</th>
+                            <th>类型</th>
+                            <th>价格</th>
+                            <th>负责人</th>
+                            <th>开房</th>
+                        </tr>
+                    </thead>
+                          <tbody>
+                        <tr>
+                           <s:iterator value="RoomList" >
 	        	<tr>
 	                <td><s:property value="Rno"/></td>
 	                <td><s:property value="Rtype"/></td>
@@ -36,7 +37,14 @@
 	                <td><input class="btn" name="edit" type="button" value="入住" onclick="InPutCheckIn('<s:property value="Rno"/>','<s:property value="Rtype"/>','<s:property value="Rprice"/>')"></td>
 		        </tr>
 	        </s:iterator>
-    	</table>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>	
+	       
     
       <script>
   
