@@ -93,7 +93,7 @@ select {
 		<div class="main">
 			<!-- 修改员工信息 -->
 			<form action="ChangeGuestInformation" id="ChangeGuestFrom"
-				target="_blank">
+				>
 				顾客姓名<input type="text" name="Gname" value='<%=Gname%>' /><br>
 				顾客身份证号<input type="text" name="NewGno" value='<%=Gno%>' /><br>
 				顾客手机号：<input type="text" name="Gtel" value='<%=Gtel%>' /><br>

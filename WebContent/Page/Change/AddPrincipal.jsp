@@ -87,7 +87,7 @@ select {
 
 	<div class="content">
 		<div class="main">
-	<form action="ChangePrincipalInformation" id="ChangePrincipalFrom" target="_blank">
+	<form action="ChangePrincipalInformation" id="ChangePrincipalFrom">
                  员工号<input type="text" name="NewPno" /><br>
                  员工姓名：<input type="text" name="Pname" /><br>
         <input type="hidden" name="Crud" value='A'/>

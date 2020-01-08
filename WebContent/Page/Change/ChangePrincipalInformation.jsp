@@ -51,26 +51,6 @@
 
 
 	<script type="text/javascript">
-		var c = '<s:property value="IsSuccess"/>';
-		if (c == 1) {
-			alert("修改员工信息成功")
-			window.close('/SJK/Page/Change/ChangePrincipal.jsp')
-		} else if (c == -1) {
-			alert("修改员工信息失败")
-			window.close('/SJK/Page/Change/ChangePrincipal.jsp')
-		} else if (c == -2) {
-			alert("删除失败")
-			window.close('/SJK/Page/Change/ChangePrincipal.jsp')
-		} else if (c == 2) {
-			alert("删除成功")
-			window.close('/SJK/Page/Change/ChangePrincipal.jsp')
-		} else if (c == -3) {
-			alert("添加失败")
-			window.close('/SJK/Page/Change/AddPrincipal.jsp')
-		} else if (c == 3) {
-			alert("添加成功")
-			window.close('/SJK/Page/Change/AddPrincipal.jsp')
-		}
 
 		function Change(Pno, Pname) {
 			open(

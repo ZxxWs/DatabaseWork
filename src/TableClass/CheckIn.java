@@ -15,7 +15,7 @@ public class CheckIn {
 	 * 类中包含两个构造函数（有参、无参）以及所有的set、get方法(真长）
 	 * 
 	 * time：2019.12.28
-	 * by:Zxx
+	 * 
 	 * */
 	private BigInteger CID;
 	private String Gno;

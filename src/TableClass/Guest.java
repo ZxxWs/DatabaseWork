@@ -11,7 +11,6 @@ public class Guest {
 	 * 
 	 * 
 	 * time£º2019.12.28
-	 * by:Zxx
 	 * 
 	 * */
 	

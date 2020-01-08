@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <link href="/SJK/Page/Css/Css3.css" type="text/css" rel="stylesheet" />
+   <link href="/SJK/Page/Css/Css2.css" type="text/css" rel="stylesheet" />
   
        
 <title>换、续、退房</title>

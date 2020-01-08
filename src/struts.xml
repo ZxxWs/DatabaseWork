@@ -56,7 +56,7 @@
 	
 		<!-- Crud房间 -->
 		<action name="ChangeRoomInformation" class="com.sjk.action.ChangeRoomInformation" method="execute">
-			 <result name="S" type="chain">ChangeRoomInformation_Show</result> 
+			 <result name="S">/Page/Change/ChangeSF.jsp</result> 
 		</action>
 	
 		<!-- 展示全部可以修改的员工信息 -->

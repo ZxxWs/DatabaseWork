@@ -18,7 +18,7 @@ body {
     color: white;
     width: 80%;
     margin: 60px auto;
-    background: url("/33.jpg")no-repeat;
+    background: url("background.jpg")no-repeat;
     overflow: hidden;
     background-size: cover;
 }
@@ -115,7 +115,7 @@ table tr td {
 
 table tr td b {
     color: white;
-    font-family: 鍗庢枃琛屾シ;
+    font-family:华文行楷;
     font-size: 20px;
     text-decoration: none;
     padding: 0 34px;

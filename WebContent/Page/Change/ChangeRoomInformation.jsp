@@ -68,27 +68,7 @@
 	
 
 	<script type="text/javascript">
-		var  c='<s:property value="IsSuccess"/>';
-		if(c==1){
-			alert("修改房间信息成功") 		
-			window.close('/SJK/Page/Change/ChangeRoom.jsp')
-	   	}else if(c==-1){
-			alert("修改房间信息失败")
-			window.close('/SJK/Page/Change/ChangeRoom.jsp')
-	    }else if(c==-2){
-	    	alert("删除失败")
-			window.close('/SJK/Page/Change/ChangeRoom.jsp')
-	    }else if(c==2){
-	    	alert("删除成功")
-			window.close('/SJK/Page/Change/ChangeRoom.jsp')
-	    }else if(c==-3){
-	    	alert("添加失败")
-			window.close('/SJK/Page/Change/AddRoom.jsp')
-	    }else if(c==3){
-	    	alert("添加成功")
-			window.close('/SJK/Page/Change/AddRoom.jsp')
-	    }
-		
+
 		 function Change(Rno,Rtype,Rprice,Rcondition,Pno){
 			open ('/SJK/Page/Change/ChangeRoom.jsp?Rno='+Rno+'&Rtype='+Rtype+'&Rprice='+Rprice+'&Rcondition='+Rcondition+'&Pno='+Pno, '修改信息' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 		 }

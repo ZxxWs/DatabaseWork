@@ -88,7 +88,7 @@ select {
 		<div class="main">
 
 			<form action="ChangeRoomInformation" id="ChangeRoomFrom"
-				target="_blank">
+				>
 				房间号<input type="text" name="NewRno" /><br> 房间类型<select
 					name="Rtype" id="RtypeSelect">
 					<option value="单人间">单人间</option>

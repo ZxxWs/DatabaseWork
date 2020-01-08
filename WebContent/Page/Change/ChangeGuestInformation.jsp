@@ -50,14 +50,7 @@
 
 
 	<script type="text/javascript">
-		var c = '<s:property value="IsSuccess"/>';
-		if (c == 1) {
-			alert("修改顾客信息成功")
-			window.close('/SJK/Page/Change/ChangeGuest.jsp')
-		} else if (c == -1) {
-			alert("修改顾客信息失败")
-			window.close('/SJK/Page/Change/ChangeGuest.jsp')
-		}
+	
 		function Change(Gno, Gname, Gtel) {
 			open(
 					'/SJK/Page/Change/ChangeGuest.jsp?Gno=' + Gno + '&Gname='

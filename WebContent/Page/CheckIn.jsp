@@ -52,11 +52,11 @@
 			if(Rtype=="单人间"){
 				open ('/SJK/Page/CheckInPut/CheckInInPut.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 			}else if(Rtype=="双人间"){
-				open ('/SJK/Page/CheckInPut/CheckInInPut2.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+				open ('/SJK/Page/CheckInPut/CheckInInPut2.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=300, left=500,  toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 			}else if(Rtype=="单人钟点房"){
-				open ('/SJK/Page/CheckInPut/CheckInInPut3.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+				open ('/SJK/Page/CheckInPut/CheckInInPut3.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=300, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 			}else{
-				open ('/SJK/Page/CheckInPut/CheckInInPut4.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+				open ('/SJK/Page/CheckInPut/CheckInInPut4.jsp?Rno='+Rno+'&Rprice='+Rprice, '客户信息登记' , 'height=400, width=700, top=300, left=500,  toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
 			}
      	   }
     </script>

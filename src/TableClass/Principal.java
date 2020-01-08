@@ -10,7 +10,6 @@ public class Principal {
 	 * 			以及所有的set、get方法
 	 * 
 	 * time：2019.12.28
-	 * by:Zxx
 	 * 
 	 * */
 	

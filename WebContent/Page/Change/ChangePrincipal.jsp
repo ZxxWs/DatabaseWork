@@ -94,7 +94,7 @@ select {
 		<div class="main">
 			<!-- 修改员工信息 -->
 			<form action="ChangePrincipalInformation" id="ChangePrincipalFrom"
-				target="_blank">
+				>
 				员工工号<input type="text" name="NewPno" value='<%=Pno%>' /><br>
 				员工姓名：<input type="text" name="Pname" value='<%=Pname%>' /><br>
 				<input type="hidden" name="OldPno" value='<%=Pno%>' /> <input
