@@ -97,9 +97,9 @@ select {
 				>
 				员工工号<input type="text" name="NewPno" value='<%=Pno%>' /><br>
 				员工姓名：<input type="text" name="Pname" value='<%=Pname%>' /><br>
-				<input type="hidden" name="OldPno" value='<%=Pno%>' /> <input
-					type="hidden" name="Crud" value='C' /> <input type="button"
-					value="确认修改" onclick="ChangePrincipal()" /><br>
+				<input type="hidden" name="OldPno" value='<%=Pno%>' /> 
+				<input type="hidden" name="Crud" value='C' /> 
+				<input type="button" value="确认修改" onclick="ChangePrincipal()"/><br>
 			</form>
 
 

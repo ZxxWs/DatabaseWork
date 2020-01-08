@@ -7,7 +7,7 @@
   <link href="/SJK/Page/Css/Css3.css" type="text/css" rel="stylesheet" />
 <title>入住成功</title>
 </head>
-<body class="body">
+<body id="body">
 	入住成功
 	<br>
 	共 <s:property value="AllMoney"/> 元

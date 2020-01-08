@@ -98,6 +98,7 @@ public class FindInformationAction extends ActionSupport{
 		}
 	}
 	
+	
 	public void setFindMethod(int FindMethod) {
 		this.FindMethod=FindMethod;
 	}

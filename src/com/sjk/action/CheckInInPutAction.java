@@ -16,7 +16,6 @@ public class CheckInInPutAction extends ActionSupport{
 	//代码有BUG，前端无法接受总金额
 	/**
 	 * 入住登记Action
-	 * get方法没写
 	 * 需要填的内容:用户姓名
 	 * 				用户身份证号
 	 * 				开房间的房间号
@@ -65,7 +64,6 @@ public class CheckInInPutAction extends ActionSupport{
 		Boolean Tag=new Boolean(true);
 		
 		int IntSex=Integer.valueOf(this.Gno.charAt(16));
-
 		String Sex="";
 		{//性别判断
 			if(IntSex%2!=0) {

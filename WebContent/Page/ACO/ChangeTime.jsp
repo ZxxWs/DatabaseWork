@@ -43,6 +43,20 @@
 			</div>
 		</div>
 	</div>
+	
+	<form id="AOTimeActionC" action="AOTimeActionC" method="post" >
+
+        <!-- 换房提交的传参-->
+        
+        <input type="hidden" name="CID" id="CID" value='<s:property value="CID"/>'>
+        <input type="hidden" name="OldRno" id="OldRno" value='<s:property value="OldRno"/>'>
+        <input type="hidden" name="NewRno" id="NewRno" value="null">
+        <input type="hidden" name="Page"  value="1">
+    </form>
+	
+	
+	
+	
 <script type="text/javascript">
 		function ChangeTime(NewRno) {
 			document.getElementById("NewRno").value = NewRno;

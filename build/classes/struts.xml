@@ -66,7 +66,7 @@
 	
 		<!-- Crud员工 -->
 		<action name="ChangePrincipalInformation" class="com.sjk.action.ChangePrincipalInformation" method="execute">
-			 <result name="S" type="chain">ChangePrincipalInformation_Show</result> 
+			 <result name="S">/Page/Change/ChangeSF.jsp</result> 
 		</action>
 	
 		<!-- 展示全部可以修改的顾客信息 -->
@@ -76,7 +76,11 @@
 	
 		<!-- Crud顾客-->
 		<action name="ChangeGuestInformation" class="com.sjk.action.ChangeGuestInformation" method="execute">
-			 <result name="S" type="chain">ChangeGuestInformation_Show</result> 
+			 <result name="S" >/Page/Change/ChangeSF.jsp</result> 
+		</action>
+		
+		<action name="ChangePassWordInformation" class="com.sjk.action.ChangePassWordInformation" method="execute">
+			 <result name="S" >/Page/Change.jsp</result> 
 		</action>
 <!-- *********************************上面是修改信息功能******************************** -->	
 	

@@ -17,7 +17,7 @@ public class CrudCheckInByCID {
  * 						 DeleteByCID-通过CID来删除CheckIn对象
  * 
  * Time:2020.1.3|19:16
- * By:Zxx
+ * By:Bq
  * */
 	
 	public static CheckIn ReadByCID(BigInteger CID) {
@@ -27,7 +27,9 @@ public class CrudCheckInByCID {
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
+			
 			checkIn=(CheckIn) session.get(CheckIn.class,CID);
+			
 			transaction.commit();
 		} catch (Exception e) {
 			System.out.print("Dispose.CrudCheckInByCID.ReadByCID-失败");
@@ -43,6 +45,7 @@ public class CrudCheckInByCID {
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
+			
 			CheckIn checkIn=(CheckIn) session.get(CheckIn.class,CID);
 			if(checkIn!=null) {
 				session.delete(checkIn);

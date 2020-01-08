@@ -10,7 +10,7 @@
  
 <title>输入入住信息</title>
 </head>
-<body class="body">
+<body id="body">
 输入入住信息
 
 
@@ -28,6 +28,9 @@
 	        顾客姓名<input type="text" name="Gname" />
 	        顾客身份证号<input type="text" name="Gno" />
 	        顾客手机号<input type="text" name="Gtel" />
+	        顾客姓名<input type="text" name="Gname1" />
+	        顾客身份证号<input type="text" name="Gno1" />
+	        顾客手机号<input type="text" name="Gtel1" />
 		<select name="AllTime">
 			<option value="1">1小时</option>
 			<option value="2">2小时</option>

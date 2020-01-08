@@ -22,6 +22,7 @@ iframe {
     overflow: hidden;
     background-size: cover;
     font-size: 20px;
+    overflow: auto;
 }
 
 body a {
@@ -112,7 +113,7 @@ body span {
 
 
 .table_content table td {
-    width: 20%;
+    width: 10%;
     height: 45px;
     font-size: 20px;
     max-width: 300px;
@@ -122,4 +123,21 @@ body span {
     vertical-align: middle;
     border-right: 2px dashed #FFF0F5;
     border-bottom: 2px dashed #FFF0F5;
+}
+
+
+#g1 {
+    margin-left: 200px;
+    width: 400px;
+    position: absolute;
+    top: 350px;
+    right: 900px;
+}
+
+#g2 {
+    margin-left: 200px;
+    width: 500px;
+    position: absolute;
+    top: 350px;
+    right: 300px;
 }

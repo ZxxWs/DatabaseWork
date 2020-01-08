@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <link href="/SJK/Page/Css/Css4.css" type="text/css" rel="stylesheet" />
   <link href="/SJK/Page/Css/CheckInPut.css" type="text/css" rel="stylesheet" />
   
 <title>输入入住信息</title>
 </head>
 
-
-<body class="body">
+<body id="body">
 输入入住信息
 
 	<%
@@ -24,6 +24,9 @@
 	        顾客姓名<input type="text" name="Gname" />
 	        顾客身份证号<input type="text" name="Gno" />
 	        顾客手机号<input type="text" name="Gtel" />
+	        顾客姓名<input type="text" name="Gname1" />
+	        顾客身份证号<input type="text" name="Gno1" />
+	        顾客手机号<input type="text" name="Gtel1" />
 		<select name="AllTime">
 			<option value="1">1天</option>
 			<option value="2">2天</option>

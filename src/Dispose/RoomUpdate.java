@@ -13,6 +13,7 @@ public class RoomUpdate {
  * 		UpdateAllInformation-刷新房间数据（静态）
  * */
 	
+	
 	public static Boolean ChangeRoomRcondition(Room room) {
 		Boolean Tag=true;//修改成功与否
 		Session session = null;
@@ -35,6 +36,7 @@ public class RoomUpdate {
 		return Tag;	
 	} 
 	
+	
 	public static Boolean UpdateAllInformation(String OldRno,String Rtype,double Rprice,int Rcondition,String Pno,String NewRno) {
 		Boolean Tag=true;
 		
@@ -42,14 +44,14 @@ public class RoomUpdate {
 		try {
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
-			
+
 			Room room=(Room) session.get(Room.class,OldRno);
 			room.setRno(NewRno);
 			room.setRtype(Rtype);
 			room.setRprice(Rprice);
 			room.setRcondition(Rcondition);
 			room.setPno(Pno);
-			
+
 			transaction.commit();
 		} catch (Exception e) {
 			System.out.print("Dispose.RoomUpdate.UpdateAllInformation-失败");

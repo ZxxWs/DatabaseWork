@@ -40,8 +40,46 @@
         <form action="ChangeGuestInformation_Show">
             <input type="submit" value="修&nbsp;改&nbsp;顾&nbsp;客&nbsp;信&nbsp;息"></input>
         </form>
+        
+        <form  action="ChangePassWordInformation" id="ChangePassWordInformation">
+        	<input type="button" value="修改密码" onclick="Change()">
+        	<input type="hidden" name="Pass" id="Pass">
+        </form>
+        
     </div>
 
+
+
+	<script type="text/javascript">
+
+		var c="<s:property value="IsSuccess"/>"
+		if(c==1){
+			alert("修改成功")
+		}else if(c==-1){
+			alert("修改失败")
+		}
+		
+	
+		function Change() {
+		    var Pass
+		    Pass = prompt("请输入修改后的密码", "");
+		    if (Pass != null) {
+		        var Pass1
+		        Pass1 = prompt("请确认修改后的密码", "");
+		
+		        if (Pass == Pass1) {
+		            var Sure = confirm("确定修改")
+		            if (Sure == true) {
+		                document.getElementById("Pass").value = Pass;
+		                document.getElementById("ChangePassWordInformation").submit();
+		            }
+		        } else {
+		            alert("两次的密码不一样")
+		        }
+		    }
+		}
+		
+	</script>
 
 </body>
 </html>
