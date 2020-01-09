@@ -18,6 +18,7 @@ public class CrudCheckInByCID {
  * 
  * Time:2020.1.3|19:16
  * By:Bq
+ * 
  * */
 	
 	public static CheckIn ReadByCID(BigInteger CID) {
@@ -34,12 +35,11 @@ public class CrudCheckInByCID {
 		} catch (Exception e) {
 			System.out.print("Dispose.CrudCheckInByCID.ReadByCID-Ê§°Ü");
 		}
-		HibernateUtil.closeSession();	
+		HibernateUtil.closeSession();	                                                           
 		return checkIn;
 	}
 	
 	public static Boolean DeleteByCID(BigInteger CID) {
-	
 		Boolean Tag=true;
 		Session session = null;
 		try {

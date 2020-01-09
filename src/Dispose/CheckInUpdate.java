@@ -1,4 +1,4 @@
-package Dispose;
+`package Dispose;
 
 import java.util.Date;
 
@@ -17,8 +17,6 @@ public class CheckInUpdate {
  * 
  * 
  * By:Zxx
- * 
- * 
  * */
 	
 	
@@ -27,7 +25,7 @@ public class CheckInUpdate {
 		
 		Boolean Tag=new Boolean(true);
 		Session session = null;
-		try {
+		try {```
 			session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
 			CheckIn newcheckIn=(CheckIn) session.get(CheckIn.class,checkIn.getCID());

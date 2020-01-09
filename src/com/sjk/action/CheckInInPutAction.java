@@ -20,6 +20,7 @@ public class CheckInInPutAction extends ActionSupport{
 	 * 				用户身份证号
 	 * 				开房间的房间号
 	 * 						时长
+	 * By:Ylj
 	 */
 	private static final long serialVersionUID = 1L;
 	//有双人间的可能性

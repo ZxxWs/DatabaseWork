@@ -6,13 +6,14 @@ public class Login {
 	 * 访问action的时候，默认执行execute方法
 	 * 然后配置action访问路径
 	 * 
+	 * By:Ylj
 	 * */
 
 	private String Password;
 	private Boolean Tag=true;
 	private int Cond=0;
 	
-	public String execute() {
+	public Str`ing execute() {
 		
 		Tag=Dispose.Login.IsTure(this.Password);
 		

@@ -16,6 +16,10 @@ public class SelectPage  extends ActionSupport{
 /**
  * 此类中控制主页显示的页面
  * 
+ * 
+ * By:Ylj
+ * 
+ * 
  * */
 	private static final long serialVersionUID = 1L;
 	private String Page;

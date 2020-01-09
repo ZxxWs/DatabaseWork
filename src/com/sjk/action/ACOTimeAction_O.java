@@ -41,14 +41,15 @@ public class ACOTimeAction_O extends ActionSupport{
 		Boolean Tag=new Boolean(true);
 		CheckIn checkIn=new CheckIn();
 		checkIn.setCID(this.CID);
-		Tag=CheckInUpdate.OutCheckIn(checkIn);//调用Zxx写的
+		
+		Tag=CheckInUpdate.OutCheckIn(checkIn);//调用
 		
 		if(Tag) {	//如果退房操作表操作成功，则改房间的状态
 			Room room=new Room();
 			
-			room.setRno(CrudCheckInByCID.ReadByCID(checkIn.getCID()).getRno());
+			room.setRno(CrudCheckInByCID.ReadByCID(checkIn.getCID()).getRno());//调用
 		
-			Tag=RoomUpdate.ChangeRoomRcondition(room);
+			Tag=RoomUpdate.ChangeRoomRcondition(room);//调用
 		}
 		return true;
 	}

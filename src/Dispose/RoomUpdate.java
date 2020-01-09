@@ -11,6 +11,7 @@ public class RoomUpdate {
  * 方法：
  * 		ChangeRoomRcondition-修改房间的状态（静态）
  * 		UpdateAllInformation-刷新房间数据（静态）
+ * 
  * */
 	
 	

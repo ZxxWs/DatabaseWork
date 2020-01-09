@@ -55,7 +55,7 @@ public class ACOTimeAction_A extends ActionSupport{
 			this.AddMoney=(this.AddTime/24)*Rprice;
 		}
 		
-		CheckInUpdate.AddTimeCheckIn(checkIn, this.AddTime, this.AddMoney);	
+		Tag=CheckInUpdate.AddTimeCheckIn(checkIn, this.AddTime, this.AddMoney);//µ÷ÓÃ	
 		return Tag;
 	}
 	

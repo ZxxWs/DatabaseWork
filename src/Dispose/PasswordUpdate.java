@@ -31,8 +31,6 @@ public class PasswordUpdate {
 		HibernateUtil.closeSession();
 		
 		return Tag;
-		
-		
 	}
 	
 }

@@ -11,6 +11,5 @@
 	入住成功
 	<br>
 	共 <s:property value="AllMoney"/> 元
-	流水号：<s:property value="CID"/>
 </body>
 </html>

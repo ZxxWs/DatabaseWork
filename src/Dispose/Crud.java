@@ -73,8 +73,6 @@ public class Crud<Obj> {
 		}
 		HibernateUtil.closeSession();
 		return ReList;
-		
-
 	}
 	
 	public void Update(Obj obj) {

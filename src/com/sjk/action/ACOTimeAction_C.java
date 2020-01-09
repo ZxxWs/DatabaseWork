@@ -45,15 +45,14 @@ public class ACOTimeAction_C extends ActionSupport{
 		Boolean Tag=new Boolean(true);
 		CheckIn OldC=new CheckIn();
 		OldC.setCID(this.CID);
-		Boolean t= CheckInUpdate.ChangeRoomCheckIn(OldC, this.NewRno);
+		Boolean t= CheckInUpdate.ChangeRoomCheckIn(OldC, this.NewRno);//µ÷ÓÃ
 		if(t) {
 			Room room=new Room();
 			room.setRno(this.OldRno);
 			if(RoomUpdate.ChangeRoomRcondition(room)) {
 				room.setRno(this.NewRno);
-				Tag=RoomUpdate.ChangeRoomRcondition(room);
+				Tag=RoomUpdate.ChangeRoomRcondition(room);                                     
 			}
-			
 		}
 		return Tag;
 	}

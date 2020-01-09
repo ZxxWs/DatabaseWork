@@ -28,8 +28,7 @@ public class ChangeRoomInformation extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 
-		System.out.print("this.Crud");
-		System.out.println(this.Crud);
+
 		if(this.Crud.equals("C")) {
 			Change();
 		}else if (this.Crud.equals("D")) {
